@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/coordinatorLayout"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		
+		android:theme="@style/Theme.NavigationGraph.AppBarOverlay">
+
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:popupTheme="@style/Theme.NavigationGraph.PopupOverlay" />
+	
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<include layout="@layout/content_main" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--android:layout_height="?attr/actionBarSize"-->
+<!--app:contentScrim="?attr/colorPrimary"-->
+
+<!--android:fitsSystemWindows="true removed from both coord and appbar"-->
+<!--com.google.android.material.appbar.CollapsingToolbarLayout
+com.google.android.material.appbar.AppBarLayout-->
+<!--app:layout_scrollFlags="scroll|enterAlways|snap" in materialtoolbar-->
+<!--android:fitsSystemWindows="true"-->
+<!--app:liftOnScroll="true" in appbar-->
+
+<!--If using android:fitsSystemWindows="true" on the coordinator layout, it shifts the content of the recycler view in when rotated to the left 
+and also shrinks the content on both sides when rotated to the right. For the moment we are keeping it in the AppBarLayout. The only problem 
+is the last entry in the recyclerview even though it visible it is not above the BottomNavigationBar, even though we have android:clipToPadding="false" in the recyclerview 
+Looks like the last item is not meant to be above the BottomNavigationBar - just visible inside it - not true-->
+
+
+<!--Tip 10 from https://medium.com/androiddevelopers/insets-handling-tips-for-android-15s-edge-to-edge-enforcement-872774e8839b
+10. Prefer ViewCompat.setOnApplyWindowInsetsListener over fitsSystemWindows=true-->

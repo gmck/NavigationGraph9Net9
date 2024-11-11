@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+	<style name="Theme.NavigationGraph.RedBmw.Starting" parent="Theme.SplashScreen.IconBackground">
+		
+		<!--<item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>-->
+
+		<item name="windowSplashScreenAnimatedIcon">@mipmap/appicon_foreground</item>
+		<item name="windowSplashScreenIconBackgroundColor">@color/ic_launcher_background</item>
+		<item name="windowSplashScreenBackground">?android:colorBackground</item>
+		<item name="postSplashScreenTheme">@style/Theme.NavigationGraph.RedBmw</item>
+	</style>
+
+
+	<style name="AlertDialogRoundedCornersTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+		<item name="materialAlertDialogTitlePanelStyle">@style/TitlePanelCenter</item>
+		<item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
+		<item name="backgroundTint">?attr/colorSurface</item>
+		<item name="shapeAppearanceMediumComponent">@style/RoundShapeAppearance</item>
+	</style>
+
+	<style name="TitlePanelCenter" parent="MaterialAlertDialog.Material3.Title.Panel">
+		<item name="android:gravity">center_horizontal</item>
+	</style>
+
+	<style name="TitleTextStyle" parent="MaterialAlertDialog.Material3.Title.Text">
+		<!--<item name="android:textColor">?attr/colorOnSurface</item>
+		<item name="android:textStyle">normal</item>
+		<item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item> changed 06/11/2024-->
+		
+		<item name="android:textColor">?attr/colorOnSurface</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="RoundShapeAppearance" parent="ShapeAppearance.Material3.MediumComponent">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">16dp</item>
+	</style>
+
+
+	<!--BottomSheetDialogRounded-->
+	<style name="BottomSheetDialog_Rounded" parent="@style/ThemeOverlay.Material3.BottomSheetDialog">
+		<item name="backgroundTint">?attr/colorSurface</item>
+		<item name="bottomSheetStyle">@style/BottomSheet_Rounded</item>
+	</style>
+
+	<style name="BottomSheet_Rounded" parent="Widget.Material3.BottomSheet">
+		<item name="shapeAppearanceOverlay">@style/ShapeAppearanceBottomSheetDialog_Rounded</item>
+	</style>
+
+	<style name="ShapeAppearanceBottomSheetDialog_Rounded" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSizeTopRight">28dp</item>
+		<item name="cornerSizeTopLeft">28dp</item>
+		<item name="cornerSizeBottomRight">0dp</item>
+		<item name="cornerSizeBottomLeft">0dp</item>
+	</style>
+	
+</resources>

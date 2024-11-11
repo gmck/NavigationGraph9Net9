@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:paddingLeft="@dimen/bottom_sheet_horizontal_margin"
+    android:paddingRight="@dimen/bottom_sheet_horizontal_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/about_dialog_product"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_productName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/about_dialog_product_name"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_product"
+            tools:text="NavigationGraph9Net9" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_version"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/about_dialog_version"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_productName"
+            tools:text="Version:" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_versionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_version"
+            tools:text="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_androidVersion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/about_dialog_android_version"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_versionName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_androidVersionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_androidVersion"
+            tools:text="10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_targetVersion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/about_dialog_targetVersion"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_androidVersionName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_targetVersionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_targetVersion"
+            tools:text="29" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_support"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/about_dialog_support"
+            android:textAppearance="@android:style/TextAppearance.Material.Medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_targetVersionName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_supportDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/about_dialog_support_details"
+            android:textAppearance="@android:style/TextAppearance.Material.Small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_support"
+            tools:text="https://github.com/gmck/NavigationGraph9Net9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+

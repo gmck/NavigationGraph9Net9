@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<item android:id="@+id/action_settings"
+		android:orderInCategory="100"
+		android:title="@string/title_settings"
+		app:showAsAction="never" />
+
+	<item android:id="@+id/action_logfiles"
+		android:orderInCategory="102"
+		android:title="@string/title_logFilesMaintenance"
+		app:showAsAction="never" />
+	
+	<item android:id="@+id/action_subscription_info"
+		android:orderInCategory="103"
+		android:title="@string/title_subscription_info"
+		app:showAsAction="never" />
+
+	<item android:id="@+id/action_about_info"
+		android:orderInCategory="104"
+		android:title="@string/title_aboutDialog"
+		app:showAsAction="never" />
+
+</menu>

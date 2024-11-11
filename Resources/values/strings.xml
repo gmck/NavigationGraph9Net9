@@ -1,0 +1,200 @@
+<resources>
+	<string name="app_name">NavigationGraph9Net9</string>
+	<string name="navigation_header_title">Android Navigator</string>
+	<string name="navigation_header_sub_title">How to navigate</string>
+	
+	<!--Navigation Drawer menu titles-->
+	<string name="title_home">Home</string>
+	<string name="title_gallery">Gallery</string>
+	<string name="title_books">Books</string>
+	<string name="title_slideshow">Slideshow</string>
+	<string name="title_widgets">Material3 Widgets</string>
+	<string name="title_subscription_purchase">Purchase Subscription</string>
+
+	<!--Bottom Navigation Menu titles-->
+	<string name="title_leaderboard">Leaderboard</string>
+	<string name="title_register">Register</string>
+	<string name="title_race_results">Race Results</string>
+
+	<!--Home Fragment Menu titles-->
+	<string name="title_subscription_info">Subscription Information</string>
+	<string name="title_settings">Settings</string>
+	<string name="title_logFilesMaintenance">Maintenance - log files</string>
+	<string name="title_aboutDialog">About NavigationGraph9</string>
+
+	<!--MaintenanceFileSelectionFragment Menu Titles-->
+	<string name="title_toggle_files">Toogle File Selections</string>
+	<string name="title_show_diagnostic_files">Show Diagnostic files</string>
+	<string name="title_show_data_files">Show data files</string>
+	<string name="title_delete_files">Delete selected file(s)</string>
+	<string name="title_view_file">View selected file</string>
+	<string name="title_email_file">Email selected file</string>
+	<string name="title_copy_file">Copy selected file to storage</string>
+	<string name="title_get_permission">Obtain File Permissions</string>
+	<!--MaintenanceFileSelectionFragment-->
+
+	<!--BooksFragment Menu Titles-->
+	<string name="title_sort_by_title">Sort by Title</string>
+	<string name="title_sort_by_author">Sort by Author</string>
+	<string name="title_sort_by_release_date">Sort by Release Date</string>
+	<string name="title_sort_by_original_order">Sort by Original Order</string>
+	
+	<!--BooksFragment-->
+	<string name="title">Title</string>
+	<string name="author">Author</string>
+	<string name="release_date">Release Date</string>
+	<string name="sort_order_key">sort_order_key</string>
+	<!--BooksFragment-->
+	
+	<!--Top Destinations labels-->
+	<string name="label_home">Home 9 - Net9"</string>
+	<string name="label_gallery">Gallery</string>
+	<string name="label_books">Books</string>
+	<string name="label_slideshow">Slideshow</string>
+	<string name="label_widgets">Material3 Widgets</string>
+	<string name="label_subscription_purchase">Purchase Subscription</string>
+	
+	<!--NotTop Destinations labels-->
+	<string name="label_settings">Settings</string>
+	<string name="label_file_maintenance">File Maintenance</string>
+	<string name="label_register">Register</string>
+	<string name="label_leaderboard">Leaderboard</string>
+	<string name="label_race_result">Race Results</string>
+
+
+	<!--Preferences.xml-->
+	<string name ="generalCategoryTitle">General</string>
+
+	<string name="use_dark_theme">Dark Theme</string>
+	<string name="use_dark_theme_summary">For older devices running less than Android 10 - Check to use Dark Theme.</string>
+
+	<string name ="colorThemeListPreferenceTitle">Choose Colour Theme</string>
+	<string name ="colorThemeListPreferenceDialogTitle">Select which colour theme to use</string>
+	<string name ="colorThemeListPreferenceSummary">Select color theme</string>
+
+	<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 12 and above</string>
+	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
+	<string name ="systemThemeListPreferenceSummary">For Android 10,11 use the Quick Settings Dark Theme button. Please see our help manual for a full discussion of this feature.</string>
+
+	<string name="use_animations">Use Screen animations</string>
+	<string name="use_animations_summary">Animate the transition from one screen to another of all the screens associated with the side menu</string>
+
+	<string name="use_dynamic_colors">Use Dynamic Colours</string>
+	<string name="use_dynamic_colors_summary">Android 12 and above only - use theme colours based on your wallpaper - may clash with Menu images</string>
+	
+	<string name="use_transparent_statusbar">Use transparent Status Bar</string>
+	<string name="use_transparent_statusbar_summary">Android 14 and below. Menu appears to slide under StatusBar. Android 15+ always transparent</string>
+
+	<string name="devicesWithNotchesAllowFullscreen">Devices with Notches/Cutouts allow full screen display</string>
+	<string name="devicesWithNotchesAllowFullscreenSummary">Allow devices Android 10-14 to display full screen. Android 15+ always full screen</string>
+
+	<string name ="displayPageIndicatorValueTitle">Display circular page indicator</string>
+	<string name ="displayPageIndicatorValueSummary">Display circular page indicator on the ViewPager</string>
+
+	<string name ="animateViewPagerTitle">Use ViewPager transitions</string>
+	<string name ="animateViewPagerSummary">Animate the transition when swiping from one page to another</string>
+
+	<string name ="showSubscriptionMenuItemTitle">Subscription Menu Item</string>
+	<string name ="showSubscriptionMenuItemSummary">If checked the Subscription Menu Item is enabled in the menu</string>
+
+	<string name="reset_helper_screens">Reset Helper Explanation Dialog</string>
+	<string name="reset_helper_screens_summary">Check to reset the Helper Explanation Dialog to show again</string>
+
+
+	<!--Preferences.xml-->
+
+	<!--Subscription DialogFragment-->
+	<string name="subscription_explanation_title">Subscription Information</string>
+	<string name="subscription_explanation_text">
+		Google Play continues to add and enhance features to Subscription Purchases. They have added features such as Account Hold, Subscription Pause, Subscription Restore and the flexability to be able to Upgrade
+		or Downgrade your subscription at any time.
+		\n\nWe provide the subscription state information for each subscription.
+		Once you have made an initial subscription purchase, a subsription record will appear here below the heading Subscriptions.
+		\n\nWhen you tap on a subscription record a new window will open, showing the current subscription status information directly from Google Play\'s servers.
+		It includes details such as your Google Order Number, the Payment and Acknowledgement States of your subscription, Starting Date, Expiration Date, Auto-Renew Date and whether the Subscription has been cancelled
+		either by the system or by the subscriber.
+		\n\nGoogle servers store Subscription date information in UTC format, we convert those dates to your local datetime format.
+		\n\nFor a full discussion re the latest Google Play Subscription features and an example screenshot please refer to our User Guide.
+		\n\nAdding a new para just for a Pixel 6 as the present length of this message is not long enough to make the content scroll without a configuration change.
+		\n\nThat was enough, but one more can\'t hurt.
+	</string>
+	<!--Subscription DialogFragment-->
+
+	<!--Deliberately shortend this message-->
+	<string name="subscription_explanation_text_short">
+		Google Play continues to add and enhance features to Subscription Purchases. They have added features such as Account Hold, Subscription Pause, Subscription Restore and the flexability to be able to Upgrade
+		or Downgrade your subscription at any time.
+		\n\nWe provide the subscription state information for each subscription.
+		Once you have made an initial subscription purchase, a subsription record will appear here below the heading Subscriptions.
+		\n\nWhen you tap on a subscription record a new window will open, showing the current subscription status information directly from Google Play\'s servers.
+		It includes details such as your Google Order Number, the Payment and Acknowledgement States of your subscription, Starting Date, Expiration Date, Auto-Renew Date and whether the Subscription has been cancelled
+		either by the system or by the subscriber.
+		\n\nGoogle servers store Subscription date information in UTC format, we convert those dates to your local datetime format.
+		\n\nFor a full discussion re the latest Google Play Subscription features and an example screenshot please refer to our User Guide.
+	</string>
+	
+	<string name="sample_1_fragment">This is the Sample 1 fragment</string>
+	<string name="sample_2_fragment">This is the Sample 2 fragment</string>
+	<string name="sample_3_fragment">This is the Sample 3 fragment</string>
+
+
+	<!--Widgets Fragment-->
+	<string name="widgets_chip">This is a Chip</string>
+	<string name="widgets_checkbox">Checkbox</string>
+	<string name="widgets_material_switch">Material Switch</string>
+	<string name="widgets_button">Button</string>
+	<!--Widgets Fragment-->
+
+	<string name="toast_message">You selected the Register menu item.</string>
+	<string name="dont_show_again">Don\'t show this message again</string>
+	
+	
+	
+	<string name="diagnostic_files">Diagnostic Files</string>
+	<string name="data_files">Data Files</string>
+	<string name="file_maintenance_explanation_title">File Maintenance</string>
+
+	<string name="file_maintenance_explanation">
+		This window allows viewing, copying, deleting, sharing and emailing of both the log files and the data log files that have been generated.
+		\n\nIn previous versions of our apps, all log files were stored in External Storage. To do that the app needed to have the ability to read and write to External Storage. Google consider reading and writing to external storage a Dangerous Permission, therefore the apps had to request that permission from the user before we could write those files. That was the standard way most apps wrote to External Storage since Android 6 when permissions were first introduced.
+		\n\nWith the release of Android 10 and even more so in Android 11 and 12 major changes were required by Google.  Now instead of writing the log files to external storage, all our log files are written to the internal storage of the app itself.
+		\n\nThis in turn has meant we have had to revise the way that we make these files available to you. The procedure is more complex, therefore we recommend that you read the section in our User Guide (search for File Maintenance) to become familiar with the procedure. Remember that these files are your files, your data etc and you are free to use them any way you wish.
+	</string>
+	
+	<string name="show_diagnostic_files">Show Diagnostic files</string>
+	<string name="permission_for_files">You selected the Get Permissions menu Item</string>
+	<string name="file_maintenance">List of diagnostic files</string>
+
+	<!--ShowMissingPermissionDialog-->
+	<string name="missing_permission_title">Bluetooth Connection Permission Denied</string>
+	<string name="missing_permission_explanation">
+		Android 12 and above require the user to grant the special permission Bluetooth Connection to connect to Bluetooth devices.
+		\n\nThis permission has been previously denied.
+		\n\nTo correct this situation, locate our app in the app drawer and long press on the app icon and then choose App Info. Under the Permissions heading it will read No permissions granted.
+		\n\nTap on the heading Permissions and a new window will open. Under the heading Not Allowed it will read Nearby Devices. Tap on Nearby Devices and another window will open with the Don\'t allow radio button
+		already selected.
+		\n\nSelect the radio button Allow, then use the back key or back gesture to exit back to the app draw and restart the app.
+		\n\nIf your Bluetooth radio is off in Quick Settings, the app will then prompt you to turn it on.
+	</string>
+	<!--ShowMissingPermissionDialog-->
+
+	<!--BluetoothConfirmationDialogFragment -->
+	<string name="bluetooth_title">Bluetooth Connection</string>
+	<string name ="bluetooth_is_enabled">Bluetooth is now enabled. A connection to your Bluetooth device can now be made.</string>
+	<string name ="bluetooth_not_enabled">Bluetooth is not enabled. A connection can not be made to your Bluetooth device until Bluetooth is enabled.</string>
+	<!--BluetoothConfirmationDialogFragment -->
+
+	<string name="welcome_navigationgraph9net9">Welcome NavigationGraph9Net9</string>
+
+	<!--About Dialog-->
+	<string name ="about_dialog_title">About NavigationGraph9</string>
+	<string name ="about_dialog_product">Product name:</string>
+	<string name ="about_dialog_product_name">NavigationGraph9Net9</string>
+	<string name ="about_dialog_version">Version:</string>
+	<string name ="about_dialog_android_version">Android OS Version:</string>
+	<string name ="about_dialog_targetVersion">Target API Version:</string>
+	<string name ="about_dialog_support">Support:</string>
+	<string name ="about_dialog_support_details">https://github.com/gmck/NavigationGraph9Net9</string>
+	<string name ="build_date">November 12, 2024 - Net9</string>
+	<!--About Dialog-->
+</resources>

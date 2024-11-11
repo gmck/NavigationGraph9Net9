@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home_fragment">
+
+	<!--Top Destinations-->
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.HomeFragment"
+		android:label="@string/label_home"/>
+	
+	<fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.GalleryFragment"
+        android:label="@string/label_gallery"/>
+
+	<fragment
+        android:id="@+id/books_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.BooksFragment"
+        android:label="@string/label_books"/>
+	
+    <fragment
+        android:id="@+id/slideshow_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.SlideshowFragment"
+		android:label="@string/label_slideshow"/>
+
+	<fragment
+        android:id="@+id/widgets_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.MaterialWidgetsFragment"
+		android:label="@string/label_widgets"/>
+
+	<fragment
+        android:id="@+id/purchase_fragment"
+        android:name="com.companyname.navigationgraph9net9.fragments.PurchaseFragment"
+		android:label="@string/label_subscription_purchase"/>
+	<!--Top Destinations-->
+	
+	
+	
+	<!--Not top destinations-->
+	<fragment
+		android:id="@+id/settingsFragment"
+		android:name="com.companyname.navigationgraph9net9.fragments.SettingsFragment"
+		android:label="@string/label_settings"/>
+	
+	<fragment		   
+	  android:id="@+id/maintenance_file_selection_fragment"
+	  android:name="com.companyname.navigationgraph9net9.fragments.MaintenanceFileSelectionFragment"
+	  android:label="@string/label_file_maintenance"/>
+
+	
+	<fragment
+		android:id="@+id/leaderboardpager_fragment"
+		android:name="com.companyname.navigationgraph9net9.fragments.LeaderboardPagerFragment"
+		android:label="@string/label_leaderboard"/>
+	
+	
+	<fragment
+		android:id="@+id/register_fragment"
+		android:name="com.companyname.navigationgraph9net9.fragments.RegisterFragment"
+		android:label="@string/label_register"/>
+
+	
+	<fragment
+		android:id="@+id/race_result_fragment"
+		android:name="com.companyname.navigationgraph9net9.fragments.RaceResultFragment"
+		android:label="@string/label_race_result"/>
+	<!--Not top destinations-->
+	
+</navigation>
+

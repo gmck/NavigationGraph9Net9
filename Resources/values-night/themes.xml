@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	
+	<!--RED BMW DARK THEME-->
+	<style name="Theme.NavigationGraph.RedBmw" parent="Theme.NavigationGraph.RedBmw.Base">
+
+		<item name="colorPrimary">@color/red_bmw_dark_primary</item>
+		<item name="colorOnPrimary">@color/red_bmw_dark_onPrimary</item>
+		<item name="colorPrimaryContainer">@color/red_bmw_dark_primaryContainer</item>
+		<item name="colorOnPrimaryContainer">@color/red_bmw_dark_onPrimaryContainer</item>
+
+		<item name="colorSecondary">@color/red_bmw_dark_secondary</item>
+		<item name="colorOnSecondary">@color/red_bmw_dark_onSecondary</item>
+		<item name="colorSecondaryContainer">@color/red_bmw_dark_secondaryContainer</item>
+		<item name="colorOnSecondaryContainer">@color/red_bmw_dark_onSecondaryContainer</item>
+
+		<item name="colorTertiary">@color/red_bmw_dark_tertiary</item>
+		<item name="colorOnTertiary">@color/red_bmw_dark_onTertiary</item>
+		<item name="colorTertiaryContainer">@color/red_bmw_dark_tertiaryContainer</item>
+		<item name="colorOnTertiaryContainer">@color/red_bmw_dark_onTertiaryContainer</item>
+
+		<item name="colorError">@color/red_bmw_dark_error</item>
+		<item name="colorErrorContainer">@color/red_bmw_dark_errorContainer</item>
+		<item name="colorOnError">@color/red_bmw_dark_onError</item>
+		<item name="colorOnErrorContainer">@color/red_bmw_dark_onErrorContainer</item>
+
+		<item name="android:colorBackground">@color/red_bmw_dark_background</item>
+		<item name="colorOnBackground">@color/red_bmw_dark_onBackground</item>
+
+		<item name="colorSurface">@color/red_bmw_dark_surface</item>
+		<item name="colorOnSurface">@color/red_bmw_dark_onSurface</item>
+		<item name="colorSurfaceVariant">@color/red_bmw_dark_surfaceVariant</item>
+		<item name="colorOnSurfaceVariant">@color/red_bmw_dark_onSurfaceVariant</item>
+		<item name="colorOutline">@color/red_bmw_dark_outline</item>
+		<item name="colorOnSurfaceInverse">@color/red_bmw_dark_inverseOnSurface</item>
+		<item name="colorSurfaceInverse">@color/red_bmw_dark_inverseSurface</item>
+		<item name="colorPrimaryInverse">@color/red_bmw_dark_inversePrimary</item>
+		
+	</style>
+
+	
+	<style name="Theme.NavigationGraph.RedBmw.Base" parent="Theme.Material3.DayNight.NoActionBar">
+
+		
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:navigationBarColor">#80000000</item>
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/bmw5</item>
+
+		<!--colorPagerIndicator-->
+		<item name ="colorPagerIndicator">@color/white</item>
+		
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+		
+	</style>
+	<!--END OF RED DARK BMW theme-->
+	
+
+	<!--BLUE AUDI DARK THEME-->
+	<style name="Theme.NavigationGraph.BlueAudi" parent="Theme.NavigationGraph.BlueAudi.Base">
+
+		<item name="colorPrimary">@color/blue_audi_dark_primary</item>
+		<item name="colorOnPrimary">@color/blue_audi_dark_onPrimary</item>
+		<item name="colorPrimaryContainer">@color/blue_audi_dark_primaryContainer</item>
+		<item name="colorOnPrimaryContainer">@color/blue_audi_dark_onPrimaryContainer</item>
+
+		<item name="colorSecondary">@color/blue_audi_dark_secondary</item>
+		<item name="colorOnSecondary">@color/blue_audi_dark_onSecondary</item>
+		<item name="colorSecondaryContainer">@color/blue_audi_dark_secondaryContainer</item>
+		<item name="colorOnSecondaryContainer">@color/blue_audi_dark_onSecondaryContainer</item>
+
+		<item name="colorTertiary">@color/blue_audi_dark_tertiary</item>
+		<item name="colorOnTertiary">@color/blue_audi_dark_onTertiary</item>
+		<item name="colorTertiaryContainer">@color/blue_audi_dark_tertiaryContainer</item>
+		<item name="colorOnTertiaryContainer">@color/blue_audi_dark_onTertiaryContainer</item>
+
+		<item name="colorError">@color/blue_audi_dark_error</item>
+		<item name="colorErrorContainer">@color/blue_audi_dark_errorContainer</item>
+		<item name="colorOnError">@color/blue_audi_dark_onError</item>
+		<item name="colorOnErrorContainer">@color/blue_audi_dark_onErrorContainer</item>
+
+		<item name="android:colorBackground">@color/blue_audi_dark_background</item>
+		<item name="colorOnBackground">@color/blue_audi_dark_onBackground</item>
+
+		<item name="colorSurface">@color/blue_audi_dark_surface</item>
+		<item name="colorOnSurface">@color/blue_audi_dark_onSurface</item>
+		<item name="colorSurfaceVariant">@color/blue_audi_dark_surfaceVariant</item>
+		<item name="colorOnSurfaceVariant">@color/blue_audi_dark_onSurfaceVariant</item>
+		<item name="colorOutline">@color/blue_audi_dark_outline</item>
+		<item name="colorOnSurfaceInverse">@color/blue_audi_dark_inverseOnSurface</item>
+		<item name="colorSurfaceInverse">@color/blue_audi_dark_inverseSurface</item>
+		<item name="colorPrimaryInverse">@color/blue_audi_dark_inversePrimary</item>
+		
+	</style>
+
+	<style name="Theme.NavigationGraph.BlueAudi.Base" parent="Theme.Material3.DayNight.NoActionBar">
+
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:navigationBarColor">#80000000</item>
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/audi_blue</item>
+
+		<!--colorPagerIndicator-->
+		<item name ="colorPagerIndicator">@color/white</item>
+		
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+	<!--END OF BLUE AUDI DARK THEME-->
+
+
+	<!--GREEN BMW DARK THEME-->
+	<style name="Theme.NavigationGraph.GreenBmw" parent="Theme.NavigationGraph.GreenBmw.Base">
+
+		<item name="colorPrimary">@color/green_bmw_dark_primary</item>
+		<item name="colorOnPrimary">@color/green_bmw_dark_onPrimary</item>
+		<item name="colorPrimaryContainer">@color/green_bmw_dark_primaryContainer</item>
+		<item name="colorOnPrimaryContainer">@color/green_bmw_dark_onPrimaryContainer</item>
+
+		<item name="colorSecondary">@color/green_bmw_dark_secondary</item>
+		<item name="colorOnSecondary">@color/green_bmw_dark_onSecondary</item>
+		<item name="colorSecondaryContainer">@color/green_bmw_dark_secondaryContainer</item>
+		<item name="colorOnSecondaryContainer">@color/green_bmw_dark_onSecondaryContainer</item>
+
+		<item name="colorTertiary">@color/green_bmw_dark_tertiary</item>
+		<item name="colorOnTertiary">@color/green_bmw_dark_onTertiary</item>
+		<item name="colorTertiaryContainer">@color/green_bmw_dark_tertiaryContainer</item>
+		<item name="colorOnTertiaryContainer">@color/green_bmw_dark_onTertiaryContainer</item>
+
+		<item name="colorError">@color/green_bmw_dark_error</item>
+		<item name="colorErrorContainer">@color/green_bmw_dark_errorContainer</item>
+		<item name="colorOnError">@color/green_bmw_dark_onError</item>
+		<item name="colorOnErrorContainer">@color/green_bmw_dark_onErrorContainer</item>
+
+		<item name="android:colorBackground">@color/green_bmw_dark_background</item>
+		<item name="colorOnBackground">@color/green_bmw_dark_onBackground</item>
+
+		<item name="colorSurface">@color/green_bmw_dark_surface</item>
+		<item name="colorOnSurface">@color/green_bmw_dark_onSurface</item>
+		<item name="colorSurfaceVariant">@color/green_bmw_dark_surfaceVariant</item>
+		<item name="colorOnSurfaceVariant">@color/green_bmw_dark_onSurfaceVariant</item>
+		<item name="colorOutline">@color/green_bmw_dark_outline</item>
+		<item name="colorOnSurfaceInverse">@color/green_bmw_dark_inverseOnSurface</item>
+		<item name="colorSurfaceInverse">@color/green_bmw_dark_inverseSurface</item>
+		<item name="colorPrimaryInverse">@color/green_bmw_dark_inversePrimary</item>
+
+	</style>
+	
+	<style name="Theme.NavigationGraph.GreenBmw.Base" parent="Theme.Material3.DayNight.NoActionBar">
+
+
+		<!-- NavigationBar-->
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:navigationBarColor">#80000000</item>
+
+		<!--Vehicle Image-->
+		<item name="vehicle_image">@drawable/bmw_green</item>
+
+		<item name ="colorPagerIndicator">@color/white</item>
+		
+		<!--AlertDialogRoundedCornersTheme style-->
+		<item name="materialAlertDialogTheme">@style/AlertDialogRoundedCornersTheme</item>
+
+	</style>
+	
+	<!--END OF GREEN BMW DARK THEME theme-->
+	
+
+	<style name="Theme.NavigationGraph.AppBarOverlay" parent="ThemeOverlay.Material3.Dark.ActionBar" />
+	<style name="Theme.NavigationGraph.PopupOverlay" parent="ThemeOverlay.Material3.Dark" />
+	
+</resources>

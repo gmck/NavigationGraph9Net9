@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--For all properties see: https://aka.ms/android-menu-resource-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:local="http://schemas.android.com/apk/res-auto">
+
+	<!--Action Bar for FileMaintenance Fragment-->
+	<item android:id="@+id/action_show_diagnostic_files"
+			android:orderInCategory="100"
+			android:title="@string/title_show_diagnostic_files"
+			android:checkable="true"
+			local:showAsAction="never" />
+
+	<item android:id="@+id/action_show_data_files"
+			android:orderInCategory="200"
+			android:title="@string/title_show_data_files"
+			android:checkable="true"
+			local:showAsAction="never" />
+
+	<item android:id="@+id/action_select_all"
+			android:orderInCategory="300"
+			android:icon="@drawable/ic_baseline_checkbox_24dp"
+			android:title="@string/title_toggle_files"
+			local:showAsAction="ifRoom|withText" />
+
+	<item android:id="@+id/action_delete"
+			android:orderInCategory="400"
+			android:title="@string/title_delete_files"
+			android:showAsAction="never" />
+
+	<item android:id="@+id/action_view_file"
+			 android:orderInCategory="500"
+			 android:title="@string/title_view_file"
+			 android:showAsAction="never" />
+
+	<item android:id="@+id/action_email_file"
+			 android:orderInCategory="600"
+			 android:title="@string/title_email_file"
+			 android:showAsAction="never" />
+
+
+	<item android:id="@+id/action_copy_file"
+			android:orderInCategory="700"
+			android:title="@string/title_copy_file"
+			android:showAsAction="never" />
+
+	<item android:id="@+id/action_get_permission"
+			android:orderInCategory="800"
+			android:title="@string/title_get_permission"
+			android:showAsAction="never" />
+</menu>
+
+

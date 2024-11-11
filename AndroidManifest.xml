@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.navigationgraph9net9" android:installLocation="auto">
+	<application android:name=".NavigationGraph9Net9" android:allowBackup="true" android:icon="@mipmap/appicon" android:label="@string/app_name" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"
+				 android:enableOnBackInvokedCallback="true" android:theme="@style/Theme.NavigationGraph.RedBmw.Starting">
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- for Android 11 and lower -->
+	<uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+	 for Android 12 and above, include the ones you really need 
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	We don't need because we don't scan - but we do - cancel.discovery check? 
+	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+</manifest>

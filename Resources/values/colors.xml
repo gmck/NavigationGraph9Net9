@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+	<!--Non color theme specific colors-->
+	<color name="black">#000000</color>
+	<color name="white">#FFFFFF</color>
+	<!--Non color theme specific colors-->
+
+	<!--Red_BMW-->
+
+	<!--Material 2 - colorPrimary, colorPrimaryVariant and colorSecondary-->
+	<!--
+	<color name="red_700">#d32f2f</color>
+	<color name="red_700_dark">#9a0007</color>
+	<color name="red_700_light">#ff6659</color>
+	-->
+
+	<!--<color name="seed">#d32f2f</color>-->
+	<!--<color name="red_bmw_light_primary">#BA1A20</color>-->						<!--Originally generated-->
+	<color name="red_bmw_light_primary">#d32f2f</color>
+	<color name="red_bmw_light_onPrimary">#FFFFFF</color>
+	<color name="red_bmw_light_primaryContainer">#FFDAD6</color>
+	<color name="red_bmw_light_onPrimaryContainer">#410003</color>
+
+	<!--<color name="red_bmw_light_secondary">#B81F1A</color>-->					<!--Originally generated-->
+	<color name="red_bmw_light_secondary">#9a0007</color>
+	<color name="red_bmw_light_onSecondary">#FFFFFF</color>
+	<color name="red_bmw_light_secondaryContainer">#FFDAD5</color>
+	<color name="red_bmw_light_onSecondaryContainer">#410001</color>
+
+	<color name="red_bmw_light_tertiary">#725B2E</color>
+	<color name="red_bmw_light_onTertiary">#FFFFFF</color>
+	<color name="red_bmw_light_tertiaryContainer">#FEDEA6</color>
+	<color name="red_bmw_light_onTertiaryContainer">#261900</color>
+
+	<color name="red_bmw_light_error">#BA1A1A</color>
+	<color name="red_bmw_light_errorContainer">#FFDAD6</color>
+	<color name="red_bmw_light_onError">#FFFFFF</color>
+	<color name="red_bmw_light_onErrorContainer">#410002</color>
+
+	<color name="red_bmw_light_background">#FFFBFF</color>
+	<color name="red_bmw_light_onBackground">#201A19</color>
+
+	<color name="red_bmw_light_surface">#FFFBFF</color>
+	<color name="red_bmw_light_onSurface">#201A19</color>					
+	
+	<color name="red_bmw_light_surfaceVariant">#F5DDDB</color>
+	<color name="red_bmw_light_onSurfaceVariant">#534342</color>
+
+	<color name="red_bmw_light_outline">#857371</color>
+
+	<color name="red_bmw_light_inverseOnSurface">#FBEEEC</color>
+	<color name="red_bmw_light_inverseSurface">#362F2E</color>
+	<color name="red_bmw_light_inversePrimary">#FFB3AC</color>
+	<color name="red_bmw_light_shadow">#000000</color>
+	<color name="red_bmw_light_surfaceTint">#BA1A20</color>
+	<color name="red_bmw_light_outlineVariant">#D8C2BF</color>
+
+	<color name="red_bmw_light_scrim">#000000</color>
+
+	<!--Dark theme colors-->
+	<color name="red_bmw_dark_primary">#FFB3AC</color>
+	<color name="red_bmw_dark_onPrimary">#680008</color>
+	<color name="red_bmw_dark_primaryContainer">#930010</color>
+	<color name="red_bmw_dark_onPrimaryContainer">#FFDAD6</color>
+
+	<color name="red_bmw_dark_secondary">#FFB4AA</color>
+	<color name="red_bmw_dark_onSecondary">#690003</color>
+	<color name="red_bmw_dark_secondaryContainer">#930006</color>
+	<color name="red_bmw_dark_onSecondaryContainer">#FFDAD5</color>
+
+	<color name="red_bmw_dark_tertiary">#E1C38C</color>
+	<color name="red_bmw_dark_onTertiary">#3F2D04</color>
+	<color name="red_bmw_dark_tertiaryContainer">#584419</color>
+	<color name="red_bmw_dark_onTertiaryContainer">#FEDEA6</color>
+
+	<color name="red_bmw_dark_error">#FFB4AB</color>
+	<color name="red_bmw_dark_errorContainer">#93000A</color>
+	<color name="red_bmw_dark_onError">#690005</color>
+	<color name="red_bmw_dark_onErrorContainer">#FFDAD6</color>
+
+	<color name="red_bmw_dark_background">#201A19</color>
+	<color name="red_bmw_dark_onBackground">#EDE0DE</color>
+	<color name="red_bmw_dark_surface">#201A19</color>
+	<color name="red_bmw_dark_onSurface">#EDE0DE</color>
+	<color name="red_bmw_dark_surfaceVariant">#534342</color>
+	<color name="red_bmw_dark_onSurfaceVariant">#D8C2BF</color>
+
+	<color name="red_bmw_dark_outline">#A08C8A</color>
+
+	<color name="red_bmw_dark_inverseOnSurface">#201A19</color>
+	<color name="red_bmw_dark_inverseSurface">#EDE0DE</color>
+	<color name="red_bmw_dark_inversePrimary">#BA1A20</color>
+	<color name="red_bmw_dark_shadow">#000000</color>
+	<color name="red_bmw_dark_surfaceTint">#FFB3AC</color>
+	<color name="red_bmw_dark_outlineVariant">#534342</color>
+
+	<color name="red_bmw_dark_scrim">#000000</color>
+
+
+	<!--Blue Audi-->
+	<!--Light colours-->
+
+	<!--Material 2 - colorPrimary, colorPrimaryVariant and colorSecondary-->
+	<!--<color name="blue_700">#0070d0</color>-->
+	<!--<color name="blue_700_dark">#004690</color>-->
+	<!--<color name="blue_700_light">#5d9eff</color>-->
+
+	<!--<color name="seed">#0070d0</color>-->
+	<!--<color name="blue_audi_light_primary">#005EB1</color>-->					<!--Originally generated-->
+	<color name="blue_audi_light_primary">#0070d0</color>
+	<color name="blue_audi_light_onPrimary">#FFFFFF</color>
+	<color name="blue_audi_light_primaryContainer">#D5E3FF</color>
+	<color name="blue_audi_light_onPrimaryContainer">#001C3B</color>
+
+	<!--<color name="blue_audi_light_secondary">#2A5EA8</color>-->					<!--Originally generated-->
+	<color name="blue_audi_light_secondary">#004690</color>
+	<color name="blue_audi_light_onSecondary">#FFFFFF</color>
+	<color name="blue_audi_light_secondaryContainer">#D7E3FF</color>
+	<color name="blue_audi_light_onSecondaryContainer">#001B3F</color>
+
+	<color name="blue_audi_light_tertiary">#6E5676</color>
+	<color name="blue_audi_light_onTertiary">#FFFFFF</color>
+	<color name="blue_audi_light_tertiaryContainer">#F8D8FF</color>
+	<color name="blue_audi_light_onTertiaryContainer">#27132F</color>
+
+	<color name="blue_audi_light_error">#BA1A1A</color>
+	<color name="blue_audi_light_errorContainer">#FFDAD6</color>
+	<color name="blue_audi_light_onError">#FFFFFF</color>
+	<color name="blue_audi_light_onErrorContainer">#410002</color>
+
+	<color name="blue_audi_light_background">#FDFBFF</color>
+	<color name="blue_audi_light_onBackground">#1A1C1E</color>
+
+	<color name="blue_audi_light_surface">#FDFBFF</color>
+	<color name="blue_audi_light_onSurface">#1A1C1E</color>		
+
+	<color name="blue_audi_light_surfaceVariant">#E0E2EC</color>
+	<color name="blue_audi_light_onSurfaceVariant">#43474E</color>
+
+	<color name="blue_audi_light_outline">#74777F</color>
+
+	<color name="blue_audi_light_inverseOnSurface">#F1F0F4</color>
+	<color name="blue_audi_light_inverseSurface">#2F3033</color>
+	<color name="blue_audi_light_inversePrimary">#A6C8FF</color>
+	<color name="blue_audi_light_shadow">#000000</color>
+	<color name="blue_audi_light_surfaceTint">#005EB1</color>
+	<color name="blue_audi_light_outlineVariant">#C4C6CF</color>
+
+	<color name="blue_audi_light_scrim">#000000</color>
+
+	<!--Dark colours-->
+	<color name="blue_audi_dark_primary">#A6C8FF</color>
+	<color name="blue_audi_dark_onPrimary">#003060</color>
+	<color name="blue_audi_dark_primaryContainer">#004787</color>
+	<color name="blue_audi_dark_onPrimaryContainer">#D5E3FF</color>
+	<color name="blue_audi_dark_secondary">#ABC7FF</color>
+	<color name="blue_audi_dark_onSecondary">#002F65</color>
+	<color name="blue_audi_dark_secondaryContainer">#00458E</color>
+	<color name="blue_audi_dark_onSecondaryContainer">#D7E3FF</color>
+	<color name="blue_audi_dark_tertiary">#DBBDE2</color>
+	<color name="blue_audi_dark_onTertiary">#3E2846</color>
+	<color name="blue_audi_dark_tertiaryContainer">#553F5D</color>
+	<color name="blue_audi_dark_onTertiaryContainer">#F8D8FF</color>
+	<color name="blue_audi_dark_error">#FFB4AB</color>
+	<color name="blue_audi_dark_errorContainer">#93000A</color>
+	<color name="blue_audi_dark_onError">#690005</color>
+	<color name="blue_audi_dark_onErrorContainer">#FFDAD6</color>
+	<color name="blue_audi_dark_background">#1A1C1E</color>
+	<color name="blue_audi_dark_onBackground">#E3E2E6</color>
+	<color name="blue_audi_dark_surface">#1A1C1E</color>
+	<color name="blue_audi_dark_onSurface">#E3E2E6</color>
+	<color name="blue_audi_dark_surfaceVariant">#43474E</color>
+	<color name="blue_audi_dark_onSurfaceVariant">#C4C6CF</color>
+	<color name="blue_audi_dark_outline">#8D9199</color>
+	<color name="blue_audi_dark_inverseOnSurface">#1A1C1E</color>
+	<color name="blue_audi_dark_inverseSurface">#E3E2E6</color>
+	<color name="blue_audi_dark_inversePrimary">#005EB1</color>
+	<color name="blue_audi_dark_shadow">#000000</color>
+	<color name="blue_audi_dark_surfaceTint">#A6C8FF</color>
+	<color name="blue_audi_dark_outlineVariant">#43474E</color>
+	<color name="blue_audi_dark_scrim">#000000</color>
+
+
+
+	<!--Green BMW-->
+
+	<!--Material 2 - colorPrimary, colorPrimaryVariant and colorSecondary-->
+	<!--<color name="green_700">#00b058</color>-->
+	<!--<color name="green_700_dark">#007f2c</color>-->
+	<!--<color name="green_700_light">#57e386</color>-->
+
+	<!--<color name="seed">#00b058</color>-->
+	<!--<color name="green_bmw_light_primary">#006D34</color>-->						<!--Originally generated-->
+	<color name="green_bmw_light_primary">#00b058</color>
+	<color name="green_bmw_light_onPrimary">#FFFFFF</color>
+	<color name="green_bmw_light_primaryContainer">#72FD9B</color>
+	<color name="green_bmw_light_onPrimaryContainer">#00210B</color>
+
+	
+	<!--<color name="green_bmw_light_secondary">#006E25</color>-->						<!--Originally generated-->
+	<color name="green_bmw_light_secondary">#007f2c</color>
+	<color name="green_bmw_light_onSecondary">#FFFFFF</color>
+	<color name="green_bmw_light_secondaryContainer">#90FA96</color>
+	<color name="green_bmw_light_onSecondaryContainer">#002106</color>
+
+	<color name="green_bmw_light_tertiary">#3A656E</color>
+	<color name="green_bmw_light_onTertiary">#FFFFFF</color>
+	<color name="green_bmw_light_tertiaryContainer">#BDEAF5</color>
+	<color name="green_bmw_light_onTertiaryContainer">#001F25</color>
+
+	<color name="green_bmw_light_error">#BA1A1A</color>
+	<color name="green_bmw_light_errorContainer">#FFDAD6</color>
+	<color name="green_bmw_light_onError">#FFFFFF</color>
+	<color name="green_bmw_light_onErrorContainer">#410002</color>
+
+	<color name="green_bmw_light_background">#FCFDF7</color>
+	<color name="green_bmw_light_onBackground">#191C19</color>					
+	
+	<color name="green_bmw_light_surface">#FCFDF7</color>								
+	<color name="green_bmw_light_onSurface">#191C19</color>							
+	<color name="green_bmw_light_surfaceVariant">#DDE5DA</color>
+	<color name="green_bmw_light_onSurfaceVariant">#414941</color>
+
+	<color name="green_bmw_light_outline">#717970</color>
+
+	<color name="green_bmw_light_inverseOnSurface">#F0F1EC</color>
+	<color name="green_bmw_light_inverseSurface">#2E312E</color>
+	<color name="green_bmw_light_inversePrimary">#53E081</color>
+	<color name="green_bmw_light_shadow">#000000</color>
+	<color name="green_bmw_light_surfaceTint">#006D34</color>
+	<color name="green_bmw_light_outlineVariant">#C1C9BE</color>
+	<color name="green_bmw_light_scrim">#000000</color>
+
+	<color name="green_bmw_dark_primary">#53E081</color>
+	<color name="green_bmw_dark_onPrimary">#003918</color>
+	<color name="green_bmw_dark_primaryContainer">#005226</color>
+	<color name="green_bmw_dark_onPrimaryContainer">#72FD9B</color>
+
+	<color name="green_bmw_dark_secondary">#74DD7D</color>
+	<color name="green_bmw_dark_onSecondary">#00390F</color>
+	<color name="green_bmw_dark_secondaryContainer">#00531A</color>
+	<color name="green_bmw_dark_onSecondaryContainer">#90FA96</color>
+
+	<color name="green_bmw_dark_tertiary">#A2CED8</color>
+	<color name="green_bmw_dark_onTertiary">#01363E</color>
+	<color name="green_bmw_dark_tertiaryContainer">#204D55</color>
+	<color name="green_bmw_dark_onTertiaryContainer">#BDEAF5</color>
+
+	<color name="green_bmw_dark_error">#FFB4AB</color>
+	<color name="green_bmw_dark_errorContainer">#93000A</color>
+	<color name="green_bmw_dark_onError">#690005</color>
+	<color name="green_bmw_dark_onErrorContainer">#FFDAD6</color>
+
+	<color name="green_bmw_dark_background">#191C19</color>
+	<color name="green_bmw_dark_onBackground">#E2E3DE</color>
+
+	<color name="green_bmw_dark_surface">#191C19</color>
+	<color name="green_bmw_dark_onSurface">#E2E3DE</color>
+	<color name="green_bmw_dark_surfaceVariant">#414941</color>
+	<color name="green_bmw_dark_onSurfaceVariant">#C1C9BE</color>
+
+	<color name="green_bmw_dark_outline">#8B938A</color>
+
+	<color name="green_bmw_dark_inverseOnSurface">#191C19</color>
+	<color name="green_bmw_dark_inverseSurface">#E2E3DE</color>
+	<color name="green_bmw_dark_inversePrimary">#006D34</color>
+	<color name="green_bmw_dark_shadow">#000000</color>
+	<color name="green_bmw_dark_surfaceTint">#53E081</color>
+	<color name="green_bmw_dark_outlineVariant">#414941</color>
+
+	<color name="green_bmw_dark_scrim">#000000</color>
+
+
+	<!--Material Theme Builder Generated-->
+
+	<!--<color name="seed">#d32f2f</color>
+	<color name="md_theme_light_primary">#BA1A20</color>
+	<color name="md_theme_light_onPrimary">#FFFFFF</color>
+	<color name="md_theme_light_primaryContainer">#FFDAD6</color>
+	<color name="md_theme_light_onPrimaryContainer">#410003</color>
+	<color name="md_theme_light_secondary">#B81F1A</color>
+	<color name="md_theme_light_onSecondary">#FFFFFF</color>
+	<color name="md_theme_light_secondaryContainer">#FFDAD5</color>
+	<color name="md_theme_light_onSecondaryContainer">#410001</color>
+	<color name="md_theme_light_tertiary">#B02D26</color>
+	<color name="md_theme_light_onTertiary">#FFFFFF</color>
+	<color name="md_theme_light_tertiaryContainer">#FFDAD5</color>
+	<color name="md_theme_light_onTertiaryContainer">#410002</color>
+	<color name="md_theme_light_error">#BA1A1A</color>
+	<color name="md_theme_light_errorContainer">#FFDAD6</color>
+	<color name="md_theme_light_onError">#FFFFFF</color>
+	<color name="md_theme_light_onErrorContainer">#410002</color>
+	<color name="md_theme_light_background">#FFFBFF</color>
+	<color name="md_theme_light_onBackground">#201A19</color>
+	<color name="md_theme_light_surface">#FFFBFF</color>
+	<color name="md_theme_light_onSurface">#201A19</color>
+	<color name="md_theme_light_surfaceVariant">#F5DDDB</color>
+	<color name="md_theme_light_onSurfaceVariant">#534342</color>
+	<color name="md_theme_light_outline">#857371</color>
+	<color name="md_theme_light_inverseOnSurface">#FBEEEC</color>
+	<color name="md_theme_light_inverseSurface">#362F2E</color>
+	<color name="md_theme_light_inversePrimary">#FFB3AC</color>
+	<color name="md_theme_light_shadow">#000000</color>
+	<color name="md_theme_light_surfaceTint">#BA1A20</color>
+	<color name="md_theme_light_outlineVariant">#D8C2BF</color>
+	<color name="md_theme_light_scrim">#000000</color>
+	<color name="md_theme_dark_primary">#FFB3AC</color>
+	<color name="md_theme_dark_onPrimary">#680008</color>
+	<color name="md_theme_dark_primaryContainer">#930010</color>
+	<color name="md_theme_dark_onPrimaryContainer">#FFDAD6</color>
+	<color name="md_theme_dark_secondary">#FFB4AA</color>
+	<color name="md_theme_dark_onSecondary">#690003</color>
+	<color name="md_theme_dark_secondaryContainer">#930006</color>
+	<color name="md_theme_dark_onSecondaryContainer">#FFDAD5</color>
+	<color name="md_theme_dark_tertiary">#FFB4AB</color>
+	<color name="md_theme_dark_onTertiary">#690005</color>
+	<color name="md_theme_dark_tertiaryContainer">#8E1212</color>
+	<color name="md_theme_dark_onTertiaryContainer">#FFDAD5</color>
+	<color name="md_theme_dark_error">#FFB4AB</color>
+	<color name="md_theme_dark_errorContainer">#93000A</color>
+	<color name="md_theme_dark_onError">#690005</color>
+	<color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+	<color name="md_theme_dark_background">#201A19</color>
+	<color name="md_theme_dark_onBackground">#EDE0DE</color>
+	<color name="md_theme_dark_surface">#201A19</color>
+	<color name="md_theme_dark_onSurface">#EDE0DE</color>
+	<color name="md_theme_dark_surfaceVariant">#534342</color>
+	<color name="md_theme_dark_onSurfaceVariant">#D8C2BF</color>
+	<color name="md_theme_dark_outline">#A08C8A</color>
+	<color name="md_theme_dark_inverseOnSurface">#201A19</color>
+	<color name="md_theme_dark_inverseSurface">#EDE0DE</color>
+	<color name="md_theme_dark_inversePrimary">#BA1A20</color>
+	<color name="md_theme_dark_shadow">#000000</color>
+	<color name="md_theme_dark_surfaceTint">#FFB3AC</color>
+	<color name="md_theme_dark_outlineVariant">#534342</color>
+	<color name="md_theme_dark_scrim">#000000</color>-->
+
+</resources>

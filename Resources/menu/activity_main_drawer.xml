@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_fragment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/title_home" />
+        <item
+            android:id="@+id/gallery_fragment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/title_gallery" />
+		<item
+            android:id="@+id/books_fragment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/title_books" />
+        <item
+            android:id="@+id/slideshow_fragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/title_slideshow" />
+		<item
+            android:id="@+id/widgets_fragment"
+            android:title="@string/title_widgets" />
+		<item
+            android:id="@+id/purchase_fragment"
+            android:title="@string/title_subscription_purchase" />
+    </group>
+</menu>

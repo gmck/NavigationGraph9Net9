@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<attr name="colorPagerIndicator" format="reference"/>
+	<!--<attr name="splashscreen_background_color" format="reference"/> no longer used-->
+	<attr name="vehicle_image" format="reference" />
+</resources>

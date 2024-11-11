@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_fragment_book"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin">
+	
+	<TextView
+        android:id="@+id/title_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:gravity="center|start"
+		android:text="@string/title"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintEnd_toStartOf="@+id/author_textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="0.50"
+        tools:text="Title"/>
+
+	<TextView
+        android:id="@+id/author_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+		android:text="@string/author"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintEnd_toStartOf="@+id/release_date_textview"
+        app:layout_constraintStart_toEndOf="@+id/title_textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="0.34"
+        tools:text="Author"/>
+
+	<TextView
+        android:id="@+id/release_date_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|end"
+		android:text="@string/release_date"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/author_textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="0.16"
+        tools:text="Release Date"/>
+
+	<View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/author_textView"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_books"
+		android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+		android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"/>
+	
+</androidx.constraintlayout.widget.ConstraintLayout>
+
