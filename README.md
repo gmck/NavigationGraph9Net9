@@ -1,15 +1,16 @@
 # NavigationGraph9Net9 net9.0-android35
-Nov 11, 2024
+Nov 12, 2024
 
 **Android 15 Version of NavigationGraph9Net9.**
 
-The contents of the project (.csprog) file have not been changed. All code changes and additions demonstrate the changes necessary to enable the edge-to-edge requirement for Android 15 devices. We have also enabled edge-to-edge for devices running Android 10 through Android 14. However, we have deliberately disabled edge-to-edge for those devices. Therefore, to see edge-to-edge on those devices, you will need to enable it via the SettingsFragment and then check the preference ***Devices with Notches/Cutouts allow full-screen display***. This is purely for development purposes so that you can easily observe the differences. Whether you enable this preference option for your app builds on those devices is entirely optional.
+The contents of the project (.csprog) file have not been changed. All code changes and additions demonstrate the changes necessary to enable the edge-to-edge requirement for Android 15 devices. We have also enabled edge-to-edge for devices running Android 10 through Android 14. However, we have deliberately disabled edge-to-edge for those devices. Therefore, to see edge-to-edge on those devices, you will need to enable it via the SettingsFragment and the preference ***Devices with Notches/Cutouts allow full-screen display***. This is purely for development purposes so that you can easily observe the differences. Whether you enable this preference option for your app builds on those devices is entirely optional.
 
-***The following is a requirement of Android 15 as Android 15 enforces edge-to-edge***
+***The following is a requirement of Android 15 as Android 15 enforces edge-to-edge - see article the 1st link below***
 
-Before target SDK 35 (Android 15), your app does not draw edge-to-edge without explicit code changes to intentionally go edge-to-edge. After setting targetSdk = 35 or higher, the system will draw your app edge-to-edge by default on Android 15 and later devices. While this change can make it easier for many apps to go edge-to-edge, critical UI elements may also be inaccessible to users. Your app must handle insets to ensure critical UI elements remain accessible.
+_Before target SDK 35 (Android 15), your app does not draw edge-to-edge without explicit code changes to intentionally go edge-to-edge. After setting targetSdk = 35 or higher, the system will draw your app edge-to-edge by default on Android 15 and later devices. While this change can make it easier for many apps to go edge-to-edge, critical UI elements may also be inaccessible to users. Your app must handle insets to ensure critical UI elements remain accessible._
 
-This is a significant change because both SetStatusBarColor and SetNavigationBarColor have been deprecated for Android 15. Not just deprecated, but removed. Therefore, existing Material3 themes require modifications.
+
+This is a significant change because both SetStatusBarColor and SetNavigationBarColor have also been deprecated for Android 15. Not just deprecated, but removed. Therefore, existing Material3 themes will require modifications.
 
 To demonstrate edge-to-edge in NavigationGraph9Net9, we added a BooksFragment to the project containing a RecyclerView. The RecyclerView is a simple list of books containing enough items to ensure it can scroll. Each RecyclerView item consists of Book Title, Author Name and Release Date. To add a little more interest, the 3-dot menu of the BooksFragment contains menu items to allow different sort orders of the RecyclerView. The main feature to observe is that the RecylerView items are visible when scrolling through the NavigationBar for both 3-button and gesture navigation. Notably, the last RecyclerView item should be positioned just above the NavigationBar.
 
@@ -31,11 +32,11 @@ else
 The preference useTransparentStatusBar has also been removed because we can't use the SetStatusBarColor or SetNavigationBarColor with Android 15. However, since both the StatusBar and NavigationBar are transparent by default in Android 15, we default to only use SetStatusBarColor and SetNavigationBarColor for all devices less than Android 15 and now use Resource.Attribute.colorSurface instead of the previous Resource.Attribute.colorSecondary. This results in a white StatusBar, which is a significant change from the prior colorSecondary and the overall look of your application. The two-tone colour combination of StatusBar and Toolbar has been around virtually forever, so this change will likely induce a reaction from your users, favourable or not!!
 
 
-Consequently, the method SetStatusBarColor() of the old SetAppTheme() has been replaced with ```SetSystemBarsAppearance().``` This new method uses the two new ```windowInsetsController.AppearanceLightStatusBars, windowInsetsController.AppearanceLightNavigationBars``` to control the StatusBars and NavigationBar for both light and dark themes.
+Consequently, the method SetStatusBarColor() of the old SetAppTheme() has been replaced with ```SetSystemBarsAppearance().``` This new method uses the two new ```windowInsetsController.AppearanceLightStatusBars, windowInsetsController.AppearanceLightNavigationBars``` to control the StatusBar and NavigationBar for both light and dark themes.
 
 **MainActivty.cs**
 
-Next, we have to move to the MainActivity.cs and modify ```OnDestinationChanged()```, actually not OnDestinationChanged itself, but the method it calls ```SetShortEdgesIfRequired(navDestination).``` This introduces the new Android 15 ```Window.Attributes.LayoutInDisplayCutoutMode LayoutInDisplayCutoutMode.Always.``` Please note the earlier reference to the preference setting ***Devices with Notches/Cutouts allow full-screen display*** above.
+Next, we have to move to the MainActivity.cs and modify ```OnDestinationChanged()```, actually not OnDestinationChanged itself, but the method it calls ```SetShortEdgesIfRequired(navDestination).``` This introduces the new Android 15 ```Window.Attributes.LayoutInDisplayCutoutMode LayoutInDisplayCutoutMode.Always.``` Please recall the earlier reference to the preference setting ***Devices with Notches/Cutouts allow full-screen display*** above.
 
 Also, the OnApplyWindowInsets method in the MainActivity has been changed to use the following.
 ```AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.DisplayCutout());```
@@ -83,9 +84,11 @@ With the above code, the last item is now above the NavigationBar using both mod
 
 You'd probably think you were done if you finished your test with three-button navigation and closed the fragment with the back button. But if you finish your test with gesture navigation at first glance, you may think you are done, but if you decide to reverse the close of the fragment, you'll find you can't because the recyclerview has already disappeared, leaving behind the three headers of the recyclerview, meaning that you have to swipe again to close the fragment completely. It looks really bizarre, with the header values still visible.
 
-Typical reaction: how did that happen? Deploy to an Android 13 device Pixel3a - doesn't do it. That's it. It's only Android 15. Deploy to a Pixel 6 running Android 14 - it does it too.
+Typical reaction: how did that happen? Deploy to an Android 13 device Pixel3a - doesn't do it. That's it. It's only Android 15. Deploy to a Pixel 6 running Android 14 - opps it does it too.
 
-It then took quite abit of debugging to realise what was happening. I'd never debuged a fragment closing before and wasn't even aware that the OnApplyWindowsInsets would fire. But once I understood that systemBarInsets.Left and systemBarInsets.Right could have positive values when swiping from the left or right I finally figured out how to fix it. Of course, that wasn't the end of it. I then needed to figure out if we were using 3-button or Gesture navigation and came up with this IsGestureNavigation() method.
+It then took quite abit of debugging to realise what was happening. I'd never debuged a fragment closing before and wasn't even aware that the OnApplyWindowsInsets would fire. But once I understood that systemBarInsets.Left and systemBarInsets.Right could have positive values when swiping from the left or right I finally figured out how to fix it. Of course, that wasn't the end of it. I then needed to figure out if we were using 3-button or Gesture navigation and came up with this IsGestureNavigation() method. 
+
+Requiring a method to test the mode of navigation has never been a requirement previously, so I'm not exactly comfortable having to introduce it. I'm concerned that I've may have overlooked something. However at this point to correct the above behaviour it is required. 
 
 The following is the **IsGestureNavigation()** method.
 
@@ -132,7 +135,7 @@ public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
     return insets;
  }
   ```
-  That just about covers all the changes.
+  That just about covers all the changes. One more reminder, to see the Predictive Back Gesture on quitting the app on Android 13 and 14 devices you need to enable Predictive Back Animations in Developer Options. The same setting has been removed from Android 15 as it is now the deault.
   
   **The following is a list of devices that were tested**
 
@@ -146,6 +149,7 @@ public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
   |Samsung S20 5G| Android 13|
   |Samsung S8| Android 9|
 
+  _Note the Samsung Tab S7, even though it is Android 13 doesn't really belong in this list because it doesn't have a display cutout. Therefore it should be considered more like the Samsung S8 which is really only tested, to make sure there are no problems running on devices less than Android 10._
 
   **Opting out of edge-to-edge**
 
@@ -153,7 +157,7 @@ I should add that Google offers a way to opt out of Android 15’s requirements of
 
 I’ve got nothing against going edge-to-edge, for I extensively use fully immersive fragments in my main app. However, I’m not so sure about SetStatusBarColor being deprecated, as that is a significant change to the design of Material3 that some of my users may object to. To counteract that, I will admit that I’m slowly becoming more comfortable with the loss of colour on the Statusbar.
 
-I haven’t tested the following, so you are on your own with these instructions. You need a new values-v35 folder with the following contents. This info comes from the Medium article below in the first link.
+I haven’t tested the following, as I've no interest in opting out, so you are on your own with these instructions. You need a new values-v35 folder with the following contents. This info comes from the Medium article below in the first link.
 ```
 <resources>
     <style name="OptOutEdgeToEdgeEnforcement">
@@ -170,8 +174,9 @@ Theme.ApplyStyle(Resource.Style.OptOutEdgeToEdgeEnforcement, false)
 
 The one thing in favour of opting out is that Google appears to utilise this option on many of its apps. The criteria I’ve used for the test is based on rotation. Do they hide the cutout, or is it displayed? Obviously, there is more to edge-to-edge than that, such as data scrolling through both the StatusBar and the NavigationBar. The only one that nearly gets a pass as perfect is Google News. The Top App Bar collapses correctly, but the data is not visible when you scroll through the StatusBar.
 
-Yes, I'm being picky...
+Yes, I'm being a bit picky... However, one would expect Google's apps to at least showcase edge-to-edge correctly.
 
+I just noticed their new update to the Weather App, is also screwed. Just rotate the screen to the right and check the cards - they need padding...
 
 |Google App|Edge-to-Edge|  
 | --- | --- |
@@ -212,7 +217,7 @@ https://developer.android.com/codelabs/edge-to-edge#3
 
 
 
-Aug 8,2024
+Aug 8, 2024
 
 This is a test project to migrate to net9.0-android35 and Android 15. Presently it is a copy of the NavigationGraph8Net8 (Android 14) which was uploaded here approximately 12 months ago. Namespaces and all references etc have been updated to com.companyname.navigationgraph9net9. 
 
