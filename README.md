@@ -197,7 +197,7 @@ I just noticed their new update to the Weather App, is also screwed. Just rotate
 | Drive |Yes|
 | Google TV|No|
 | YT Music|No|
-| Translate |No|
+| Translate |No|****
 | Podcasts|No|
 | Google Play Console|Yes|
 | Docs|No|
@@ -206,6 +206,8 @@ I just noticed their new update to the Weather App, is also screwed. Just rotate
 **Wrapup**
 
 I would have preferred to also include a collapsing toolbar example in this project. Unfortunately, I had problems in making it work. I’d like to get it working before I decide if I want to add that feature to my published apps. My main app has many fragments using RecyclerViews, and at this stage, I am finding it difficult to decide whether I would like that data to be visible through the StatusBar. The only way to decide would be to see it in action so you can be sure I’ll be working towards a working collapsing top bar version. 
+
+Please also note that the Predictive Back Gesture when exiting the app, is only available on Android 15 devices. To see it on Android 13 and Android 14 devices you need to activate in **Developer Options** - search for _Predictive back animations_.
 
 **Links to edge-to-edge articles and documentation**
 
