@@ -14,7 +14,7 @@ This is a significant change because both SetStatusBarColor and SetNavigationBar
 
 To demonstrate edge-to-edge in NavigationGraph9Net9, we added a BooksFragment to the project containing a RecyclerView. The RecyclerView is a simple list of books containing enough items to ensure it can scroll. Each RecyclerView item consists of Book Title, Author Name and Release Date. To add a little more interest, the 3-dot menu of the BooksFragment contains menu items to allow different sort orders of the RecyclerView. The main feature to observe is that the RecylerView items are visible when scrolling through the NavigationBar for both 3-button and gesture navigation. Notably, the last RecyclerView item should be positioned just above the NavigationBar.
 
-However, before getting to the BooksFragment and the edge-to_edge requirements, we first need to modify the BaseActivity.cs. Probably the easiest way to track the changes is to also open the NavigationGraph8Net8 project and compare the two BasicActivity.cs. Alternately, I've left the old code commented out at the end of the new BasicActivity.cs.
+However, before getting to the BooksFragment and the edge-to-edge requirements, we first need to modify the BaseActivity.cs. Probably the easiest way to track the changes is to also open the NavigationGraph8Net8 project and compare the two BasicActivity.cs. Alternately, I've left the old code commented out at the end of the new BasicActivity.cs.
 
 **BasicActivity.cs**
 
@@ -48,9 +48,9 @@ There is nothing special about this fragment besides the fact that it is the fir
 
 I needed something to demonstrate going edge-to-edge, and a RecylerView can readily demonstrate going edge-to-edge.
 
-As stated earlier, this RecylcerView contains a simple list of books, so I don't think it is necessary to explain how to build a RecyclerView, as most developers have already been using them for years.
+As stated earlier, this RecyclerView contains a simple list of books, so I don't think it is necessary to explain how to build a RecyclerView, as most developers have already been using them for years.
 
-The recyclerview is contained within a ConstraintLayout in fragment_books.xml. It includes a standard RecyclerView.Adapter, BookAdapter, and the BookViewHolder uses book.xml to inflate its view for each RecyclerView item.
+The RecyclerView is contained within a ConstraintLayout in fragment_books.xml. It includes a standard RecyclerView.Adapter, BookAdapter, and the BookViewHolder uses book.xml to inflate its view for each RecyclerView item.
 
 **The requirements for edge-to-edge are:**
 
@@ -86,7 +86,7 @@ You'd probably think you were done if you finished your test with three-button n
 
 Typical reaction: how did that happen? Deploy to an Android 13 device Pixel3a - doesn't do it. That's it. It's only Android 15. Deploy to a Pixel 6 running Android 14 - opps it does it too.
 
-It then took quite abit of debugging to realise what was happening. I'd never debuged a fragment closing before and wasn't even aware that the OnApplyWindowsInsets would fire. But once I understood that systemBarInsets.Left and systemBarInsets.Right could have positive values when swiping from the left or right I finally figured out how to fix it. Of course, that wasn't the end of it. I then needed to figure out if we were using 3-button or Gesture navigation and came up with this IsGestureNavigation() method. 
+It then took quite abit of debugging to realise what was happening. I'd never debugged a fragment closing before and wasn't even aware that the OnApplyWindowsInsets would fire. But once I understood that systemBarInsets.Left and systemBarInsets.Right could have positive values when swiping from the left or right I finally figured out how to fix it. Of course, that wasn't the end of it. I then needed to figure out if we were using 3-button or Gesture navigation and came up with this IsGestureNavigation() method. 
 
 Requiring a method to test the mode of navigation has never been a requirement previously, so I'm not exactly comfortable having to introduce it. I'm concerned that I've may have overlooked something. However at this point to correct the above behaviour it is required. 
 
