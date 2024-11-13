@@ -551,19 +551,7 @@ namespace com.companyname.navigationgraph9net9
     }
 }
 
-// Considering converting to C# but so far don't have a need. See BooksFragment
-//fun WindowInsetsCompat.isInGestureNavigationMode(): Boolean {
-//    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-//        return false
-//    }
-//    val systemGesturesInsets = getInsetsIgnoringVisibility(WindowInsetsCompat.Type.systemGestures())
-//    val navigationBarsInsets = getInsetsIgnoringVisibility(WindowInsetsCompat.Type.navigationBars())
 
-//    val hasSystemGestureHorizontalInset = systemGesturesInsets.left > 0 || systemGesturesInsets.right > 0
-//    val hasNavigationBarHorizontalInset = navigationBarsInsets.left > 0 || navigationBarsInsets.right > 0
-
-//    return hasSystemGestureHorizontalInset && !hasNavigationBarHorizontalInset
-//}
 
 
 
