@@ -18,7 +18,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         private List<Book>? books;
         private int initialPaddingBottom;
         private SortOrder currentSortOrder;     // It will default to zero e.g. SortOrder.Original
-        
+
         public BooksFragment() { }
 
         #region OnCreate
@@ -35,8 +35,8 @@ namespace com.companyname.navigationgraph9net9.Fragments
             View? view = inflater.Inflate(Resource.Layout.fragment_books, container, false);
 
             if (savedInstanceState != null)
-                currentSortOrder = (SortOrder)savedInstanceState.GetInt(GetString(Resource.String.sort_order_key),(int)SortOrder.Original);
-            
+                currentSortOrder = (SortOrder)savedInstanceState.GetInt(GetString(Resource.String.sort_order_key), (int)SortOrder.Original);
+
             bookAdapter = new BookAdapter(books!);
             recyclerView = view!.FindViewById<RecyclerView>(Resource.Id.recyclerview_books);
             recyclerView!.SetLayoutManager(new LinearLayoutManager(Context));
@@ -127,20 +127,26 @@ namespace com.companyname.navigationgraph9net9.Fragments
             {
                 // Makes sure the last item in the recycler view is visible above the NavigationBar.
                 // Really obvious when using 3-button navigation. The last item is visible, but it is not above the the NavigationBar
-                // Comment out the line above in OnCreateView - ViewCompat.SetOnApplyWindowInsetsListener(recyclerView, this) to see the difference. 
+                // Comment out the lines above in OnCreateView - ViewCompat.SetOnApplyWindowInsetsListener(recyclerView, this) to see the difference. 
 
                 // Before API 35 - padding of the recyclerview.
-                // AndroidX.Core.Graphics.Insets navigationBarInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                // v.SetPadding(v.Left, v.Top, v.Right, navigationBarInsets.Bottom + initialPaddingBottom);
+                //AndroidX.Core.Graphics.Insets navigationBarInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
+                //v.SetPadding(v.Left, v.Top, v.Right, navigationBarInsets.Bottom + initialPaddingBottom);
 
 
                 // API 35 Requirment - now need systemBar.Insets.Left and systemBarInsets.Right to make sure it works with a backgesture when closing the fragment. See notes in IsGestureNavigation() 
                 AndroidX.Core.Graphics.Insets systemBarInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
-                
-                if (IsGestureNavigation(insets)) 
+                if (IsGestureNavigation(insets))
                     v.SetPadding(systemBarInsets.Left, v.Top, systemBarInsets.Right, systemBarInsets.Bottom + initialPaddingBottom);
                 else
                     v.SetPadding(v.Left, v.Top, v.Right, systemBarInsets.Bottom + initialPaddingBottom);
+
+
+                // This or WindowInsetsCompat.Type.SystemGestures() also fails 
+                // AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.MandatorySystemGestures());
+                // v.SetPadding(windowInsets.Left, v.Top, windowInsets.Right, windowInsets.Bottom + initialPaddingBottom);
+                
+
             }
             return insets;
         }
@@ -150,14 +156,14 @@ namespace com.companyname.navigationgraph9net9.Fragments
         private static bool IsGestureNavigation(WindowInsetsCompat insets)
         {
             // Determine if using Gesture navigation
-            
+
             // Notes: Without this check etc - prior to API 35, we would just adjust the recyclerview with systemBarInserts.Bottom + initialPaddingBottom.
             // However, that caused bizarre behaviour when closing this fragment with a back gesture to close the fragment. When closing a fragment, OnApplyWindowsInsets is called again,
             // and this time systemBarInsets.Left and SystemBarInsets.Right have positive values, therefore without accounting for them, the back gesture was non - reversible,
             // and the recyclerview disappeared, leaving the header of the recyclerview, requiring a another swipe to close the fragment, including the header of the recyclerview.
             // Therefore, this method and the new replacement code are needed in the OnApplyWindowInsets(..).
             // Comment the if/else lines and uncomment the single v.Padding() line to see the effect. Note - this didn't affect the closing of the fragment when using 3-button navigation.
-            
+
             AndroidX.Core.Graphics.Insets systemBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
             return systemBarsInsets.Bottom != 0;
         }
