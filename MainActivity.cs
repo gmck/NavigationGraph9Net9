@@ -388,15 +388,11 @@ namespace com.companyname.navigationgraph9net9
             // Still to be done - change wording of the deviceWithNotchesAllowFullScreen, which will mean all fragments other than the ImmersiveFragments - see immersiveFragmentsDestinationIds - only one in this project.
             // Effectively it will be all fragments - or none, except all immersiveFragments will always be full screen because they will be in the List<int> immersiveFragmentDestinationIds. 
 
-            //if (!OperatingSystem.IsAndroidVersionAtLeast(29))
-
-            // Android10 API 29 Q and above.
-            if (OperatingSystem.IsAndroidVersionAtLeast(29))      // Android10 API 29 Q and above.
-                Window!.Attributes!.LayoutInDisplayCutoutMode = immersiveFragmentsDestinationIds!.Contains<int>(navDestination.Id) | devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.ShortEdges : LayoutInDisplayCutoutMode.Default;
-            else if(OperatingSystem.IsAndroidVersionAtLeast(30))  // Android11 API 30 R and above.
-                Window!.Attributes!.LayoutInDisplayCutoutMode = immersiveFragmentsDestinationIds!.Contains<int>(navDestination.Id) | devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.Always : LayoutInDisplayCutoutMode.Default;
-            else if (OperatingSystem.IsAndroidVersionAtLeast(35)) // Android11 API 35 VANILA_ICE_CREAM and above.
+            // Nov 19, 2024 Changed (corrected..) the order
+            if (OperatingSystem.IsAndroidVersionAtLeast(35))        // Android 15 API 35 VANILA_ICE_CREAM and above.
                 Window!.Attributes!.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.Always;
+            else if (OperatingSystem.IsAndroidVersionAtLeast(29))   // Android 10 API 29 Q and above.
+                Window!.Attributes!.LayoutInDisplayCutoutMode = immersiveFragmentsDestinationIds!.Contains<int>(navDestination.Id) | devicesWithNotchesAllowFullScreen ? LayoutInDisplayCutoutMode.ShortEdges : LayoutInDisplayCutoutMode.Default;
         }
         #endregion
 
@@ -461,12 +457,12 @@ namespace com.companyname.navigationgraph9net9
                 packageInfo = packageManager.GetPackageInfo(PackageName!, PackageManager.PackageInfoFlags.Of(PackageInfoFlagsLong.None));
             else
                 packageInfo = packageManager.GetPackageInfo(PackageName!, 0)!;
-            
+
             string message = GetString(Resource.String.welcome_navigationgraph9net9) + " - Version: " + packageInfo.VersionName;
             if (showSnackBar)
                 SnackBarHelper.ShowSnackbar(navigationView!, message, 1);
-                
-            
+
+
         }
         #endregion
 

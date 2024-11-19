@@ -142,10 +142,9 @@ namespace com.companyname.navigationgraph9net9.Fragments
                     v.SetPadding(v.Left, v.Top, v.Right, systemBarInsets.Bottom + initialPaddingBottom);
 
 
-                // This or WindowInsetsCompat.Type.SystemGestures() also fails 
-                // AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.MandatorySystemGestures());
-                // v.SetPadding(windowInsets.Left, v.Top, windowInsets.Right, windowInsets.Bottom + initialPaddingBottom);
-                
+                // WindowInsetsCompat.Type.SystemGestures() or WindowInsetsCompat.Type.SystemGestures() also fails 
+                //AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.MandatorySystemGestures());
+                //v.SetPadding(windowInsets.Left, v.Top, windowInsets.Right, windowInsets.Bottom + initialPaddingBottom);
 
             }
             return insets;
