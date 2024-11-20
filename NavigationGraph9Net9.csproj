@@ -102,12 +102,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.3" />
-		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.12" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.8.3" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.8.3" />
-		<PackageReference Include="Xamarin.AndroidX.Preference" Version="1.2.1.10" />
-		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.0" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.4" />
+		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.13" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.8.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.8.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Preference" Version="1.2.1.11" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
