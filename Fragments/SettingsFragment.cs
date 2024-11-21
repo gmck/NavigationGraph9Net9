@@ -6,6 +6,7 @@ using Android.Widget;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.View;
 using AndroidX.Preference;
+using com.companyname.navigationgraph9net9.Classes;
 using System;
 
 namespace com.companyname.navigationgraph9net9.Fragments
@@ -23,7 +24,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Activity!);
 
             SetPreferencesFromResource(Resource.Xml.preferences, rootKey);
-            
+
             if (PreferenceScreen!.FindPreference("colorThemeValue") is ColorThemeListPreference colorThemeListPreference)
             {
                 colorThemeListPreference.Init();
@@ -98,6 +99,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             View? view = base.OnCreateView(inflater, container, savedInstanceState);
             if (view is LinearLayout layout)
             {
+                //view.ClipToOutline = false; Didn't work
                 initialPaddingBottom = layout!.PaddingBottom;
                 ViewCompat.SetOnApplyWindowInsetsListener(layout, this);
             }
@@ -110,8 +112,11 @@ namespace com.companyname.navigationgraph9net9.Fragments
         {
             if (v is LinearLayout)
             {
-                AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                v.SetPadding(navigationBarsInsets.Left, navigationBarsInsets.Top, navigationBarsInsets.Right, navigationBarsInsets.Bottom + initialPaddingBottom);
+                AndroidX.Core.Graphics.Insets systemBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
+                if (NavigationMode.IsGestureNavigation(insets))
+                    v.SetPadding(systemBarsInsets.Left, v.Top, systemBarsInsets.Right, systemBarsInsets.Bottom + initialPaddingBottom);
+                else
+                    v.SetPadding(v.Left, v.Top, v.Right, systemBarsInsets.Bottom + initialPaddingBottom);
             }
             return insets;
         }
@@ -144,7 +149,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
 
         #region CheckboxDevicesWithNotchesAllFullScreen_PreferenceChange
         private void CheckboxDevicesWithNotchesAllFullScreen_PreferenceChange(object? sender, Preference.PreferenceChangeEventArgs e)
-        {  
+        {
             bool requestedMode = (bool)e.NewValue!;
             ISharedPreferencesEditor? editor = sharedPreferences!.Edit();
             editor!.PutBoolean("devicesWithNotchesAllowFullScreen", requestedMode)!.Apply();
@@ -161,7 +166,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         //    ISharedPreferencesEditor? editor = sharedPreferences!.Edit();
         //    editor!.PutBoolean("use_transparent_statusbar", useTransparentStatusBar)!.Apply();
         //    editor.Commit();
-            
+
         //    Activity!.Recreate();
         //}
         #endregion
@@ -209,7 +214,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             // Note we subtract 1 from the index - See SystemThemeListPreference
             // Equivelent to UiNightMode.Auto, No and Yes, we manipulated it by subtracting 1 to match 0,1,2 instead of 1,2,3 as in SystemThemeListPreference
 
-            UiNightMode uiNightMode = (UiNightMode)index-1;     
+            UiNightMode uiNightMode = (UiNightMode)index - 1;
             SetDefaultNightMode12(uiNightMode);
         }
         #endregion
@@ -241,6 +246,6 @@ namespace com.companyname.navigationgraph9net9.Fragments
             AppCompatDelegate.DefaultNightMode = requestedNightMode ? AppCompatDelegate.ModeNightYes : AppCompatDelegate.ModeNightNo;
         }
         #endregion
-       
+
     }
 }

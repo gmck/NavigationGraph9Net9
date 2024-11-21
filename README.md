@@ -1,6 +1,12 @@
 # NavigationGraph9Net9 net9.0-android35
 Nov 21, 2024
 
+This is a correction. I overlooked the SettingsFragment which also has an IOnApplyWindowInsetsListener, which didn't have the IsGestureMode method. Therefore I created a new static NavigationMode class that now contains the IsGestureMethod, so it can be called from any fragment.
+
+Unfortunately the Settings fragment, doesn't show data when scrolling the data through the bottom NavigationBar. Assuming it also uses a recyclerview (which I doubt) we would need to determine if its layout is using a recyclerview and figure out how to apply android:clipToPadding="false" programmatically to it. I'm afraid that is for another day. At least the last item is showing about the Navigation for both modes. I'll write a Kotlin program to check against Android standard behaviour re it's data visible through the navigationbar.
+
+Nov 21, 2024
+
 Just an update of the NuGet packages.
 
 Nov 19, 2024
