@@ -146,6 +146,10 @@ namespace com.companyname.navigationgraph9net9.Fragments
                 //AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.MandatorySystemGestures());
                 //v.SetPadding(windowInsets.Left, v.Top, windowInsets.Right, windowInsets.Bottom + initialPaddingBottom);
 
+                // Trying this combination - after re reading Google Docs https://developer.android.com/develop/ui/views/layout/edge-to-edge also doesn't work
+                //AndroidX.Core.Graphics.Insets combinedWindowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.DisplayCutout());
+                //v.SetPadding(combinedWindowInsets.Left, combinedWindowInsets.Top, combinedWindowInsets.Right, combinedWindowInsets.Bottom);// + initialPaddingBottom);
+
             }
             return insets;
         }

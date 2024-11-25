@@ -1,4 +1,8 @@
 # NavigationGraph9Net9 net9.0-android35
+Nov 25, 2023
+
+More updates to NuGet packages - cleaned up csprog file
+
 Nov 21, 2024
 
 This is a correction. I overlooked the SettingsFragment which also has an IOnApplyWindowInsetsListener, which didn't have the IsGestureMode method. Therefore I created a new static NavigationMode class that now contains the IsGestureMethod, so it can be called from any fragment.

@@ -24,7 +24,7 @@ namespace com.companyname.navigationgraph9net9.Classes
             return systemBarsInsets.Bottom != 0;
         }
 
-        // Alternate method
+        # region Alternate IsGestureNavigationMode(WindowInsetsCompat insets)
         //private static bool IsGestureNavigationMode(WindowInsetsCompat insets) // Not using, but works.
         //{
         //    // This came from https://stackoverflow.com/questions/56689210/how-to-detect-full-screen-gesture-mode-in-android-10/60733427#60733427
@@ -38,5 +38,6 @@ namespace com.companyname.navigationgraph9net9.Classes
 
         //    return hasSystemGestureHorizontalInset && !hasNavigationBarHorizontalInset;
         //}
+        #endregion
     }
 }

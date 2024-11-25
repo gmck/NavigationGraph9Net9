@@ -11,106 +11,23 @@
 		<RootNamespace>com.companyname.navigationgraph9net9</RootNamespace>
 		<RuntimeIdentifiers Condition=" '$(Configuration)' == 'Release' ">android-arm;android-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
+	
 	<!--
     Enable full trimming in Release mode.
     To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/trimming-options#trimming-granularity
-  -->
+	-->
+	
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
 		<TrimMode>full</TrimMode>
 	</PropertyGroup>
-	
-	<ItemGroup>
-		<None Remove="proguard.cfg" />
-		<None Remove="Resources\anim\fade_in.xml" />
-		<None Remove="Resources\anim\fade_out.xml" />
-		<None Remove="Resources\anim\m3_motion_fade_enter.xml" />
-		<None Remove="Resources\anim\m3_motion_fade_exit.xml" />
-		<None Remove="Resources\anim\slide_in_left.xml" />
-		<None Remove="Resources\anim\slide_in_right.xml" />
-		<None Remove="Resources\anim\slide_out_left.xml" />
-		<None Remove="Resources\anim\slide_out_right.xml" />
-		<None Remove="Resources\drawable\audi_blue.jpg" />
-		<None Remove="Resources\drawable\bmw5.jpg" />
-		<None Remove="Resources\drawable\bmw_green.jpg" />
-		<None Remove="Resources\drawable\default_dot.xml" />
-		<None Remove="Resources\drawable\ic_baseline_checkbox_24dp.xml" />
-		<None Remove="Resources\drawable\ic_feedback.xml" />
-		<None Remove="Resources\drawable\ic_home.xml" />
-		<None Remove="Resources\drawable\ic_list.xml" />
-		<None Remove="Resources\drawable\ic_menu_camera.xml" />
-		<None Remove="Resources\drawable\ic_menu_gallery.xml" />
-		<None Remove="Resources\drawable\ic_menu_slideshow.xml" />
-		<None Remove="Resources\drawable\ic_speedo1.xml" />
-		<None Remove="Resources\drawable\selected_dot.xml" />
-		<None Remove="Resources\drawable\splash_logo.xml" />
-		<None Remove="Resources\drawable\tab_selector.xml" />
-		<None Remove="Resources\drawable\thumb_checked.xml" />
-		<None Remove="Resources\layout\activity_main.xml" />
-		<None Remove="Resources\layout\app_bar_main.xml" />
-		<None Remove="Resources\layout\book_item.xml" />
-		<None Remove="Resources\layout\content_main.xml" />
-		<None Remove="Resources\layout\fragment_books.xml" />
-		<None Remove="Resources\layout\fragment_gallery.xml" />
-		<None Remove="Resources\layout\fragment_home.xml" />
-		<None Remove="Resources\layout\fragment_leaderboard.xml" />
-		<None Remove="Resources\layout\fragment_leaderboard_viewpager.xml" />
-		<None Remove="Resources\layout\fragment_maintenance_file_selection.xml" />
-		<None Remove="Resources\layout\fragment_purchase.xml" />
-		<None Remove="Resources\layout\fragment_raceresult.xml" />
-		<None Remove="Resources\layout\fragment_register.xml" />
-		<None Remove="Resources\layout\fragment_sample1.xml" />
-		<None Remove="Resources\layout\fragment_sample2.xml" />
-		<None Remove="Resources\layout\fragment_sample3.xml" />
-		<None Remove="Resources\layout\fragment_slideshow.xml" />
-		<None Remove="Resources\layout\fragment_widgets.xml" />
-		<None Remove="Resources\layout\generic_dialog.xml" />
-		<None Remove="Resources\layout\generic_dialog_switch_scrollable.xml" />
-		<None Remove="Resources\layout\nav_header.xml" />
-		<None Remove="Resources\menu\activity_main_drawer.xml" />
-		<None Remove="Resources\menu\bottom_nav.xml" />
-		<None Remove="Resources\menu\menu_file_maintenance.xml" />
-		<None Remove="Resources\menu\menu_home_fragment.xml" />
-		<None Remove="Resources\menu\menu_register_fragment.xml" />
-		<None Remove="Resources\mipmap-anydpi-v26\appicon.xml" />
-		<None Remove="Resources\mipmap-anydpi-v26\appicon_round.xml" />
-		<None Remove="Resources\mipmap-hdpi\appicon.png" />
-		<None Remove="Resources\mipmap-hdpi\appicon_background.png" />
-		<None Remove="Resources\mipmap-hdpi\appicon_foreground.png" />
-		<None Remove="Resources\mipmap-mdpi\appicon.png" />
-		<None Remove="Resources\mipmap-mdpi\appicon_background.png" />
-		<None Remove="Resources\mipmap-mdpi\appicon_foreground.png" />
-		<None Remove="Resources\mipmap-xhdpi\appicon.png" />
-		<None Remove="Resources\mipmap-xhdpi\appicon_background.png" />
-		<None Remove="Resources\mipmap-xhdpi\appicon_foreground.png" />
-		<None Remove="Resources\mipmap-xxhdpi\appicon.png" />
-		<None Remove="Resources\mipmap-xxhdpi\appicon_background.png" />
-		<None Remove="Resources\mipmap-xxhdpi\appicon_foreground.png" />
-		<None Remove="Resources\mipmap-xxxhdpi\appicon.png" />
-		<None Remove="Resources\mipmap-xxxhdpi\appicon_background.png" />
-		<None Remove="Resources\mipmap-xxxhdpi\appicon_foreground.png" />
-		<None Remove="Resources\navigation\nav_graph.xml" />
-		<None Remove="Resources\values-night\themes.xml" />
-		<None Remove="Resources\values-v31\styles.xml" />
-		<None Remove="Resources\values\attrs.xml" />
-		<None Remove="Resources\values\colors.xml" />
-		<None Remove="Resources\values\dimens.xml" />
-		<None Remove="Resources\values\ic_launcher_background.xml" />
-		<None Remove="Resources\values\strings.xml" />
-		<None Remove="Resources\values\styles.xml" />
-		<None Remove="Resources\values\themes.xml" />
-		<None Remove="Resources\xml\preferences.xml" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.4" />
 		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.13" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.8.3.1" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.8.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.8.4" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.8.4" />
 		<PackageReference Include="Xamarin.AndroidX.Preference" Version="1.2.1.11" />
 		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="Screenshots\" />
-	</ItemGroup>
 </Project>
