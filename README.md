@@ -1,5 +1,9 @@
 # NavigationGraph9Net9 net9.0-android35
-Nov 25, 2023
+Dec 1, 2024
+
+Just a typo in the OnApplyWindowInsets of the BooksFragment
+
+Nov 25, 2024
 
 More updates to NuGet packages - cleaned up csprog file
 

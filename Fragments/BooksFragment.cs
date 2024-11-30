@@ -130,8 +130,8 @@ namespace com.companyname.navigationgraph9net9.Fragments
                 // Comment out the lines above in OnCreateView - ViewCompat.SetOnApplyWindowInsetsListener(recyclerView, this) to see the difference. 
 
                 // Before API 35 - padding of the recyclerview.
-                //AndroidX.Core.Graphics.Insets navigationBarInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                //v.SetPadding(v.Left, v.Top, v.Right, navigationBarInsets.Bottom + initialPaddingBottom);
+                //AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
+                //v.SetPadding(v.Left, v.Top, v.Right, navigationBarsInsets.Bottom + initialPaddingBottom);
 
 
                 // API 35 Requirment - now need systemBar.Insets.Left and systemBarInsets.Right to make sure it works with a backgesture when closing the fragment. See notes in IsGestureNavigation() 
