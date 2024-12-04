@@ -1,4 +1,16 @@
 # NavigationGraph9Net9 net9.0-android35
+Dec 5, 2024
+
+See documentation re edge-to-edge in NavigationMode.cs.
+
+Have gone completely EdgeToEdge, removed ```WindowCompat.SetDecorFitsSystemWindows(Window!, false);```
+
+in the BasicActivity and have now set to ensure transparency in the NavigationBar
+```
+if (OperatingSystem.IsAndroidVersionAtLeast(29))
+                Window!.NavigationBarContrastEnforced = false; // Makes NavigationBar fully transparent
+```
+
 Dec 1, 2024
 
 Just a typo in the OnApplyWindowInsets of the BooksFragment

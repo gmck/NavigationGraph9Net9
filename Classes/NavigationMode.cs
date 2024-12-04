@@ -9,6 +9,13 @@ namespace com.companyname.navigationgraph9net9.Classes
 {
     public static class NavigationMode
     {
+        //Links to edge-to-edge articles and documentation
+
+        // https://medium.com/androiddevelopers/insets-handling-tips-for-android-15s-edge-to-edge-enforcement-872774e8839b#:~:text=Android%2015%20enforces%20edge%2Dto,Android%2015%20and%20later%20devices.
+        // https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge
+        // https://developer.android.com/develop/ui/views/layout/edge-to-edge
+        // https://developer.android.com/codelabs/edge-to-edge#3
+
         public static bool IsGestureNavigation(WindowInsetsCompat insets)
         {
             // Determine if using Gesture navigation

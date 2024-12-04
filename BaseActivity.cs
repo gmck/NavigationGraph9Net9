@@ -32,12 +32,14 @@ namespace com.companyname.navigationgraph9net9
             // I have tested without this test (i.e. EdgeToEdge only) and it was ok on a SamsungS20, but I'm not sure about older APIs.
             // The only other device I've got that is lower than Android 10 is SamsungS8 running Pie Android 9. I'll leave as is but in may not be necessay 
 
-            if (OperatingSystem.IsAndroidVersionAtLeast(35))
-                EdgeToEdge.Enable(this);
-            else
-                WindowCompat.SetDecorFitsSystemWindows(Window!, false);
+            //if (OperatingSystem.IsAndroidVersionAtLeast(35))
+            //    EdgeToEdge.Enable(this);
+            //else
+            //    WindowCompat.SetDecorFitsSystemWindows(Window!, false);
 
-            //EdgeToEdge.Enable(this); // Probably ok for devices less than 10 - therfore could probably comment out the above lines
+            EdgeToEdge.Enable(this); // Probably ok for devices less than 10 - therfore could probably comment out the above lines
+            if (OperatingSystem.IsAndroidVersionAtLeast(29))
+                Window!.NavigationBarContrastEnforced = false;
 
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
 

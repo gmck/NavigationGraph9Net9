@@ -77,21 +77,10 @@ namespace com.companyname.navigationgraph9net9
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            if (OperatingSystem.IsAndroidVersionAtLeast(29))
-            {
-                Window!.NavigationBarContrastEnforced = false;
-            }
-
+            
             // Require a toolbar
             toolbar = FindViewById<MaterialToolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-
-            //AppBarLayout? appBarLayout = FindViewById<AppBarLayout>(Resource.Id.app_bar_layout);
-            //TypedValue typedValue = new();
-            //Theme!.ResolveAttribute(Resource.Attribute.colorSecondary, typedValue, true);
-            //int color = ContextCompat.GetColor(this, typedValue.ResourceId);
-            //appBarLayout!.SetStatusBarForegroundColor(new Color(ColorUtils.SetAlphaComponent(color, 204)));
-
 
             // navigationView, bottomNavigationView for NavigationUI and drawerLayout for the AppBarConfiguration and NavigationUI
             drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
