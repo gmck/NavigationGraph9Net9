@@ -70,7 +70,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             onPageChangeCallback = new OnPageChangeCallback(Activity!);
             leaderboardViewPager.RegisterOnPageChangeCallback(onPageChangeCallback);  // Unregister it in OnDestroy
 
-            TabLayoutMediator tabMediator = new TabLayoutMediator(leaderboardTabLayout!, leaderboardViewPager, new TabConfigurationStrategy());
+            TabLayoutMediator tabMediator = new(leaderboardTabLayout!, leaderboardViewPager, new TabConfigurationStrategy());
             tabMediator.Attach();
 
             if (displayPageIndicator)
@@ -88,15 +88,15 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnApplyWindowInsets
-        public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
+        public WindowInsetsCompat OnApplyWindowInsets(View? v, WindowInsetsCompat? insets)
         {
             // Need to keep the leaderboardTabLayout above the NavigationBar
             if (v is ConstraintLayout)
             {
-                AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, navigationBarsInsets.Bottom +initialPaddingBottom);
+                AndroidX.Core.Graphics.Insets? navigationBarsInsets = insets!.GetInsets(WindowInsetsCompat.Type.NavigationBars());
+                v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, navigationBarsInsets!.Bottom +initialPaddingBottom);
             }
-            return insets;
+            return insets!;
         }
         #endregion
 
@@ -133,8 +133,8 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #region ZoomPageTransformer
         public class ZoomOutPageTransformer : Java.Lang.Object, ViewPager2.IPageTransformer
         {
-            private static float MinimumScale = 0.85f;
-            private static float MinimumAlpha = 0.5f;
+            private readonly static float MinimumScale = 0.85f;
+            private readonly static float MinimumAlpha = 0.5f;
 
             public void TransformPage(View view, float position)
             {
@@ -182,10 +182,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             // We don't really need this. But would for instance if we wanted to display a Toast
             private readonly Context context;
 
-            public OnPageChangeCallback(Context context)
-            {
-                this.context = context;
-            }
+            public OnPageChangeCallback(Context context) => this.context = context;
 
             public override void OnPageSelected(int position)
             {

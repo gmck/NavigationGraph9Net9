@@ -195,6 +195,6 @@
 	<string name ="about_dialog_targetVersion">Target API Version:</string>
 	<string name ="about_dialog_support">Support:</string>
 	<string name ="about_dialog_support_details">https://github.com/gmck/NavigationGraph9Net9</string>
-	<string name ="build_date">November 12, 2024 - Net9</string>
+	<string name ="build_date">July 18, 2025 - Net9</string>
 	<!--About Dialog-->
 </resources>

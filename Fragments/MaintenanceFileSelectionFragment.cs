@@ -73,16 +73,16 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnCreateMenu
-        public void OnCreateMenu(IMenu menu, MenuInflater menuInflater)
+        public void OnCreateMenu(IMenu? menu, MenuInflater? menuInflater)
         {
-            menuInflater.Inflate(Resource.Menu.menu_file_maintenance, menu);
+            menuInflater!.Inflate(Resource.Menu.menu_file_maintenance, menu);
         }
         #endregion
 
         #region OnMenuItemSelected
-        public bool OnMenuItemSelected(IMenuItem menuItem)
+        public bool OnMenuItemSelected(IMenuItem? menuItem)
         {
-            switch (menuItem.ItemId)
+            switch (menuItem!.ItemId)
             {
                 case Resource.Id.action_show_diagnostic_files:
                     // Change this message
@@ -103,7 +103,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnPrepareMenu
-        public void OnPrepareMenu(IMenu menu)
+        public void OnPrepareMenu(IMenu? menu)
         {
             // OnPrepareMenu as well as OnMenuClosed (which is not used here ) was missing from IMenuProvider. Fixed May 25, 2023 
 
@@ -118,7 +118,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
             folderUri = sharedPreferences!.GetString("FolderUri", string.Empty);
 
             // Disable/enable menu items as needed.
-            IMenuItem? menuItemShowDiagnostic = menu.FindItem(Resource.Id.action_show_diagnostic_files);
+            IMenuItem? menuItemShowDiagnostic = menu!.FindItem(Resource.Id.action_show_diagnostic_files);
             IMenuItem? menuItemShowData = menu.FindItem(Resource.Id.action_show_data_files);
             IMenuItem? menuItemDelete = menu.FindItem(Resource.Id.action_delete);
             IMenuItem? menuItemViewFile = menu.FindItem(Resource.Id.action_view_file);

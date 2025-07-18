@@ -11,7 +11,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #region NewInstance
         internal static SampleFragment1 NewInstance()
         {
-            SampleFragment1 fragment = new SampleFragment1();
+            SampleFragment1 fragment = new();
             return fragment;
         }
         #endregion

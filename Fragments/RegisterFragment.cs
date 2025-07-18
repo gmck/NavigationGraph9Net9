@@ -45,16 +45,16 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnCreateMenu
-        public void OnCreateMenu(IMenu menu, MenuInflater menuInflater)
+        public void OnCreateMenu(IMenu? menu, MenuInflater? menuInflater)
         {
-            menuInflater.Inflate(Resource.Menu.menu_register_fragment, menu);
+            menuInflater!.Inflate(Resource.Menu.menu_register_fragment, menu);
         }
         #endregion
 
         #region OnMenuItemSelected
-        public bool OnMenuItemSelected(IMenuItem menuItem)
+        public bool OnMenuItemSelected(IMenuItem? menuItem)
         {
-            switch (menuItem.ItemId)
+            switch (menuItem!.ItemId)
             {
                 case Resource.Id.action_register_fragment:
 

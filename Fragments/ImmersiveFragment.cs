@@ -53,10 +53,9 @@ namespace com.companyname.navigationgraph9net9.Fragments
             // Had to add the following line to ensure the immersiveFragment went full screen on launch, without it it left a black rectangle where the statusbar had been. 
             // Note it would display correctly after one rotation on return from the rotation was ok.
             Activity!.Window!.AddFlags(WindowManagerFlags.LayoutNoLimits);
-            //WindowCompat.SetDecorFitsSystemWindows(Activity.Window, false);   // Don't need, because it is our default at startup - see BaseActivity
-            WindowInsetsControllerCompat windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
-            windowInsetsControllerCompat.SystemBarsBehavior = WindowInsetsControllerCompat.BehaviorShowTransientBarsBySwipe;
-            windowInsetsControllerCompat.Hide(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
+            WindowInsetsControllerCompat? windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
+            windowInsetsControllerCompat!.SystemBarsBehavior = WindowInsetsControllerCompat.BehaviorShowTransientBarsBySwipe;
+            windowInsetsControllerCompat?.Hide(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
 
         }
         #endregion
@@ -65,9 +64,10 @@ namespace com.companyname.navigationgraph9net9.Fragments
         private void ShowSystemUi()
         {
             Activity!.Window!.ClearFlags(WindowManagerFlags.LayoutNoLimits);// We had to add, so we need to clear it.
-            //WindowCompat.SetDecorFitsSystemWindows(Activity.Window, true);    // Don't need because it is false at start up      
-            WindowInsetsControllerCompat windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
-            windowInsetsControllerCompat.Show(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
+            WindowInsetsControllerCompat? windowInsetsControllerCompat = WindowCompat.GetInsetsController(Activity.Window, Activity.Window.DecorView);
+            windowInsetsControllerCompat?.Show(WindowInsetsCompat.Type.StatusBars() | WindowInsetsCompat.Type.NavigationBars());
+
+            
 
             if (Activity is MainActivity mainActivity)
             {

@@ -50,15 +50,15 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnApplyWindowInsets
-        public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
+        public WindowInsetsCompat OnApplyWindowInsets(View? v, WindowInsetsCompat? insets)
         {
             // Need to keep the FloatingActionButton above the NavigationBar in Landscape Mode so we pad the view
             if (v is ConstraintLayout)
             {
-                AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-                v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, navigationBarsInsets.Bottom + initialPaddingBottom);
+                AndroidX.Core.Graphics.Insets? navigationBarsInsets = insets!.GetInsets(WindowInsetsCompat.Type.NavigationBars());
+                v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, navigationBarsInsets!.Bottom + initialPaddingBottom);
             }
-            return insets;
+            return insets!;
         }
         #endregion
     }

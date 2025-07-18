@@ -83,16 +83,16 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnCreateMenu
-        public void OnCreateMenu(IMenu menu, MenuInflater menuInflater)
+        public void OnCreateMenu(IMenu? menu, MenuInflater? menuInflater)
         {
-            menuInflater.Inflate(Resource.Menu.menu_books_fragment, menu);
+            menuInflater!.Inflate(Resource.Menu.menu_books_fragment, menu);
         }
         #endregion
 
         #region OnMenuItemSelected
-        public bool OnMenuItemSelected(IMenuItem menuItem)
+        public bool OnMenuItemSelected(IMenuItem? menuItem)
         {
-            switch (menuItem.ItemId)
+            switch (menuItem!.ItemId)
             {
                 case Resource.Id.action_sort_by_title:
                     currentSortOrder = SortOrder.Title;
@@ -121,7 +121,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnApplyWindowInsets
-        public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
+        public WindowInsetsCompat OnApplyWindowInsets(View? v, WindowInsetsCompat? insets)
         {
             if (v is RecyclerView)
             {
@@ -135,56 +135,16 @@ namespace com.companyname.navigationgraph9net9.Fragments
 
 
                 // API 35 Requirment - now need systemBar.Insets.Left and systemBarInsets.Right to make sure it works with a backgesture when closing the fragment. See notes in IsGestureNavigation() 
-                AndroidX.Core.Graphics.Insets systemBarInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
+                AndroidX.Core.Graphics.Insets? systemBarInsets = insets!.GetInsets(WindowInsetsCompat.Type.SystemBars());
                 if (NavigationMode.IsGestureNavigation(insets))
-                    v.SetPadding(systemBarInsets.Left, v.Top, systemBarInsets.Right, systemBarInsets.Bottom + initialPaddingBottom);
+                    v.SetPadding(systemBarInsets!.Left, v.Top, systemBarInsets.Right, systemBarInsets.Bottom + initialPaddingBottom);
                 else
-                    v.SetPadding(v.Left, v.Top, v.Right, systemBarInsets.Bottom + initialPaddingBottom);
-
-
-                // WindowInsetsCompat.Type.SystemGestures() or WindowInsetsCompat.Type.SystemGestures() also fails 
-                //AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.MandatorySystemGestures());
-                //v.SetPadding(windowInsets.Left, v.Top, windowInsets.Right, windowInsets.Bottom + initialPaddingBottom);
-
-                // Trying this combination - after re reading Google Docs https://developer.android.com/develop/ui/views/layout/edge-to-edge also doesn't work
-                //AndroidX.Core.Graphics.Insets combinedWindowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.DisplayCutout());
-                //v.SetPadding(combinedWindowInsets.Left, combinedWindowInsets.Top, combinedWindowInsets.Right, combinedWindowInsets.Bottom);// + initialPaddingBottom);
+                    v.SetPadding(v.Left, v.Top, v.Right, systemBarInsets!.Bottom + initialPaddingBottom);
 
             }
-            return insets;
+            return insets!;
         }
         #endregion
-
-        #region IsGestureNavigation - Now has it own class NavigationMode.IsGestureNavigation
-        //private static bool IsGestureNavigation(WindowInsetsCompat insets)
-        //{
-        //    // Determine if using Gesture navigation
-
-        //    // Notes: Without this check etc - prior to API 35, we would just adjust the recyclerview with systemBarInserts.Bottom + initialPaddingBottom.
-        //    // However, that caused bizarre behaviour when closing this fragment with a back gesture to close the fragment. When closing a fragment, OnApplyWindowsInsets is called again,
-        //    // and this time systemBarInsets.Left and SystemBarInsets.Right have positive values, therefore without accounting for them, the back gesture was non - reversible,
-        //    // and the recyclerview disappeared, leaving the header of the recyclerview, requiring a another swipe to close the fragment, including the header of the recyclerview.
-        //    // Therefore, this method and the new replacement code are needed in the OnApplyWindowInsets(..).
-        //    // Comment the if/else lines and uncomment the single v.Padding() line to see the effect. Note - this didn't affect the closing of the fragment when using 3-button navigation.
-
-        //    AndroidX.Core.Graphics.Insets systemBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
-        //    return systemBarsInsets.Bottom != 0;
-        //}
-        #endregion
-
-        //private static bool IsGestureNavigationMode(WindowInsetsCompat insets) // Not using, but works.
-        //{
-        //    // This came from https://stackoverflow.com/questions/56689210/how-to-detect-full-screen-gesture-mode-in-android-10/60733427#60733427
-        //    // See the commented Android code outside of the final } Also works, but more complex. 
-
-        //    AndroidX.Core.Graphics.Insets systemGesturesInsets = insets.GetInsetsIgnoringVisibility(WindowInsetsCompat.Type.SystemGestures());
-        //    AndroidX.Core.Graphics.Insets navigationBarsInsets = insets.GetInsetsIgnoringVisibility(WindowInsetsCompat.Type.NavigationBars());
-
-        //    bool hasSystemGestureHorizontalInset = systemGesturesInsets.Left > 0 || systemGesturesInsets.Right > 0;
-        //    bool hasNavigationBarHorizontalInset = navigationBarsInsets.Left > 0 || navigationBarsInsets.Right > 0;
-
-        //    return hasSystemGestureHorizontalInset && !hasNavigationBarHorizontalInset;
-        //}
 
         #region GetBooks
         private List<Book> GetBooks()
@@ -258,68 +218,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
         }
         #endregion
 
-        #region Leave for reference
-        //public override void OnSaveInstanceState(Bundle? outState)
-        //{
-        //    base.OnSaveInstanceState(outState!);
-        //    LinearLayoutManager? layoutManager = (LinearLayoutManager)recyclerView!.GetLayoutManager()!;
-        //    outState!.PutInt("scrolled_position",
-        //    layoutManager.FindFirstCompletelyVisibleItemPosition());
-        //}
-
-        //public override void OnViewStateRestored(Bundle? savedInstanceState)
-        //{
-        //    base.OnViewStateRestored(savedInstanceState);
-        //    if (savedInstanceState != null)
-        //    {
-        //        int scrollPosition = savedInstanceState.GetInt("scrolled_position");
-        //        recyclerView!.ScrollToPosition(scrollPosition);
-        //    }
-        //}
-
-        //public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
-        //{
-        //    if (v is RecyclerView)
-        //    {
-        //        // Make sure the last item in the recycler view is visible. Really obvious when using 3-button navigation.
-        //        // Comment out the line above in OnCreateView - ViewCompat.SetOnApplyWindowInsetsListener(recyclerView, this) to see the difference. 
-        //        AndroidX.Core.Graphics.Insets systemBarInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars()); 
-
-        //        //AndroidX.Core.Graphics.Insets systemGesturesInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemGestures());
-        //        //AndroidX.Core.Graphics.Insets mandatorySystemGesturesInsets = insets.GetInsets(WindowInsetsCompat.Type.MandatorySystemGestures());
-        //        //AndroidX.Core.Graphics.Insets systemBarsSystemGestureInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.SystemGestures());
-        //        //AndroidX.Core.Graphics.Insets navigationBarInsets = insets.GetInsets(WindowInsetsCompat.Type.NavigationBars());
-
-        //        v.SetPadding(v.Left, v.Top, v.Right, v.Bottom = systemBarInsets.Bottom + initialPaddingBottom);
-
-        //    }
-        //    return insets;
-        //}
-        #endregion
-
     }
 
 }
 
-// Considering converting to C# but so far don't have a need. See above IsGestureNavigation
-
-/*
- * Check if gesture navigation mode is active.
- * In gesture navigation mode, the standard navigation bar is hidden and replaced with a gesture area with a handle.
- *
- * To detect if the device is in gesture navigation mode, both conditions should be met:
- * 1. At least one system gesture horizontal inset is greater than 0.
- * 2. Navigation bar horizontal insets are equal to 0.
- */
-//fun WindowInsetsCompat.isInGestureNavigationMode(): Boolean {
-//    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-//        return false
-//    }
-//    val systemGesturesInsets = getInsetsIgnoringVisibility(WindowInsetsCompat.Type.systemGestures())
-//    val navigationBarsInsets = getInsetsIgnoringVisibility(WindowInsetsCompat.Type.navigationBars())
-
-//    val hasSystemGestureHorizontalInset = systemGesturesInsets.left > 0 || systemGesturesInsets.right > 0
-//    val hasNavigationBarHorizontalInset = navigationBarsInsets.left > 0 || navigationBarsInsets.right > 0
-
-//    return hasSystemGestureHorizontalInset && !hasNavigationBarHorizontalInset
-//}

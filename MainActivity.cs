@@ -65,7 +65,7 @@ namespace com.companyname.navigationgraph9net9
 
 
         // Just to demonstrate the use the SnackBarHelper class - make it true and you will see a SnackBar when the app starts.
-        private bool showSnackBar = false;
+        private readonly bool showSnackBar = false;
 
 
         #region OnCreate
@@ -125,7 +125,7 @@ namespace com.companyname.navigationgraph9net9
         #endregion
 
         #region OnApplyWindowInsets
-        public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
+        public WindowInsetsCompat OnApplyWindowInsets(View? v, WindowInsetsCompat? insets)
         {
             // 21/10/2024 - If we don't have android:fitsSystemWindows="true" in AppBarLayout in app_bar_main.xml then we need to use SetTopMargin in the OnApplyWindowInsets
             // All this does is use insets.Top to adjust marginLayoutParams.TopMargin = insets.Top;
@@ -135,12 +135,12 @@ namespace com.companyname.navigationgraph9net9
             // We need to use the DrawerLayout rather than the AppBarLayout. If we use the AppBarLayout then we get an extra scrim when the NavigationView is displayed in Landscape.
             // Without SetLeftMargin the NavigationBarView will be too close to the 3-button NavigationBar's back button in Landscape and instead of tappingthe hamburger menu 
             // we end up exiting the app via the back button. This lowers the navigationBar drops it.
-            AndroidX.Core.Graphics.Insets windowInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.DisplayCutout());
+            AndroidX.Core.Graphics.Insets? windowInsets = insets!.GetInsets(WindowInsetsCompat.Type.SystemBars() | WindowInsetsCompat.Type.DisplayCutout());
 
             if (v is MaterialToolbar)
-                SetTopMargin(v, windowInsets);
+                SetTopMargin(v, windowInsets!);
             else if (v is DrawerLayout)
-                SetLeftRightMargins(v, windowInsets);
+                SetLeftRightMargins(v, windowInsets!);
 
             return insets;  // Can't use WindowInsetsCompat.Consumed here
         }

@@ -6,8 +6,8 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<ApplicationId>com.companyname.NavigationGraph9Net9</ApplicationId>
-		<ApplicationVersion>11</ApplicationVersion>
-		<ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
+		<ApplicationVersion>12</ApplicationVersion>
+		<ApplicationDisplayVersion>1.2</ApplicationDisplayVersion>
 		<RootNamespace>com.companyname.navigationgraph9net9</RootNamespace>
 		<RuntimeIdentifiers Condition=" '$(Configuration)' == 'Release' ">android-arm;android-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
@@ -20,14 +20,18 @@
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
 		<TrimMode>full</TrimMode>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
-		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.4" />
-		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.13" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.8.4" />
-		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.8.4" />
-		<PackageReference Include="Xamarin.AndroidX.Preference" Version="1.2.1.11" />
-		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.1" />
+		<ProguardConfiguration Include="proguard.cfg" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.1" />
+		<PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.16" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.Fragment" Version="2.9.1" />
+		<PackageReference Include="Xamarin.AndroidX.Navigation.UI" Version="2.9.1" />
+		<PackageReference Include="Xamarin.AndroidX.Preference" Version="1.2.1.14" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.4" />
 	</ItemGroup>
 
 </Project>

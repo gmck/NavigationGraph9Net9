@@ -108,17 +108,17 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnApplyWindowInsets
-        public WindowInsetsCompat OnApplyWindowInsets(View v, WindowInsetsCompat insets)
+        public WindowInsetsCompat OnApplyWindowInsets(View? v, WindowInsetsCompat? insets)
         {
             if (v is LinearLayout)
             {
-                AndroidX.Core.Graphics.Insets systemBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
+                AndroidX.Core.Graphics.Insets? systemBarsInsets = insets!.GetInsets(WindowInsetsCompat.Type.SystemBars());
                 if (NavigationMode.IsGestureNavigation(insets))
-                    v.SetPadding(systemBarsInsets.Left, v.Top, systemBarsInsets.Right, systemBarsInsets.Bottom + initialPaddingBottom);
+                    v.SetPadding(systemBarsInsets!.Left, v.Top, systemBarsInsets.Right, systemBarsInsets.Bottom + initialPaddingBottom);
                 else
-                    v.SetPadding(v.Left, v.Top, v.Right, systemBarsInsets.Bottom + initialPaddingBottom);
+                    v.SetPadding(v.Left, v.Top, v.Right, systemBarsInsets!.Bottom + initialPaddingBottom);
             }
-            return insets;
+            return insets!;
         }
         #endregion
 
@@ -157,18 +157,6 @@ namespace com.companyname.navigationgraph9net9.Fragments
 
             Activity!.Recreate();
         }
-        #endregion
-
-        #region CheckboxTransparentStausBar_PreferenceChange
-        //private void CheckboxTransparentStausBar_PreferenceChange(object? sender, Preference.PreferenceChangeEventArgs e)
-        //{
-        //    bool useTransparentStatusBar = (bool)e.NewValue!;
-        //    ISharedPreferencesEditor? editor = sharedPreferences!.Edit();
-        //    editor!.PutBoolean("use_transparent_statusbar", useTransparentStatusBar)!.Apply();
-        //    editor.Commit();
-
-        //    Activity!.Recreate();
-        //}
         #endregion
 
         #region ColorThemeListPreference_PreferenceChange

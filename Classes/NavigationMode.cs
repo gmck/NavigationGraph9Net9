@@ -16,7 +16,7 @@ namespace com.companyname.navigationgraph9net9.Classes
         // https://developer.android.com/develop/ui/views/layout/edge-to-edge
         // https://developer.android.com/codelabs/edge-to-edge#3
 
-        public static bool IsGestureNavigation(WindowInsetsCompat insets)
+        public static bool IsGestureNavigation(WindowInsetsCompat? insets)
         {
             // Determine if using Gesture navigation
 
@@ -27,8 +27,8 @@ namespace com.companyname.navigationgraph9net9.Classes
             // Therefore, this method and the new replacement code are needed in the OnApplyWindowInsets(..).
             // Comment the if/else lines and uncomment the single v.Padding() line to see the effect. Note - this didn't affect the closing of the fragment when using 3-button navigation.
 
-            AndroidX.Core.Graphics.Insets systemBarsInsets = insets.GetInsets(WindowInsetsCompat.Type.SystemBars());
-            return systemBarsInsets.Bottom != 0;
+            AndroidX.Core.Graphics.Insets? systemBarsInsets = insets!.GetInsets(WindowInsetsCompat.Type.SystemBars());
+            return systemBarsInsets!.Bottom != 0;
         }
 
         # region Alternate IsGestureNavigationMode(WindowInsetsCompat insets)

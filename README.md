@@ -1,5 +1,31 @@
-# NavigationGraph9Net9 net9.0-android35
-Dec 5, 2024
+# NavigationGraph9Net9 - net9.0-android35
+July 18, 2025
+
+All NuGet Packages have been updated to the July 15, 2025 versions.
+
+This is a new build to demonstrate that if uploaded to Google Play Console it would fail edge-to-edge requirements for Android 15 (due to be enforced Sept 1 2025) with the following 
+
+**Your app uses deprecated APIs or parameters for edge-to-edge.**
+
+One or more of the APIs that you use or parameters that you set for edge-to-edge and window display have been deprecated in Android 15. Your app uses the following deprecated APIs or parameters.
+
+**android.view.Window.setStatusBarColor**
+
+**android.view.Window.setNavigationBarColor**
+
+**These start in the following places**
+
+**com.google.android.material.bottomsheet.BottomSheetDialog.onCreate
+com.google.android.material.internal.EdgeToEdgeUtils.applyEdgeToEdge**
+
+**To fix this, migrate away from these APIs or parameters**
+
+As you can see this app does not use SetStatusBarColor or SetNavigationBarColor, so why the warnings from Google Play? 
+
+Please see https://github.com/dotnet/android/issues/10304 for the explantion.
+
+
+Dec 5, 2024 
 
 See documentation re edge-to-edge in NavigationMode.cs.
 

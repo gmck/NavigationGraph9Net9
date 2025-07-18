@@ -72,23 +72,23 @@ namespace com.companyname.navigationgraph9net9.Fragments
         #endregion
 
         #region OnCreateMenu
-        public void OnCreateMenu(IMenu menu, MenuInflater menuInflater)
+        public void OnCreateMenu(IMenu? menu, MenuInflater? menuInflater)
         {
-            menuInflater.Inflate(Resource.Menu.menu_home_fragment, menu);
+            menuInflater!.Inflate(Resource.Menu.menu_home_fragment, menu);
         }
         #endregion
 
         #region OnPrepareMenu
-        public void OnPrepareMenu(IMenu menu)
+        public void OnPrepareMenu(IMenu? menu)
         {
             // OnPrepareMenu as well as OnMenuClosed (which is not used here ) was missing from IMenuProvider. Fixed May 25, 2023 
-            IMenuItem? menuItemSettings = menu.FindItem(Resource.Id.action_subscription_info);
+            IMenuItem? menuItemSettings = menu!.FindItem(Resource.Id.action_subscription_info);
             menuItemSettings!.SetEnabled(enableSubscriptionInfoMenuItem);
         }
         #endregion
 
         #region OnMenuItemSelected
-        public bool OnMenuItemSelected(IMenuItem menuItem)
+        public bool OnMenuItemSelected(IMenuItem? menuItem)
         {
             if (!animateFragments)
                 AnimationResource.Fader3();
@@ -104,7 +104,7 @@ namespace com.companyname.navigationgraph9net9.Fragments
                     .SetPopUpTo(Resource.Id.home_fragment, false)     // Inclusive false, saveState true.
                     .Build();
 
-            switch (menuItem.ItemId)
+            switch (menuItem!.ItemId)
             {
                 case Resource.Id.action_settings:
 

@@ -7,8 +7,8 @@ namespace com.companyname.navigationgraph9net9
     public class ColorThemeListPreference : ListPreference
     {
         internal readonly string DefaultThemeValue = "Select Color Theme";
-        internal string[] themeEntries = { "Red Bmw", "Blue Audi", "Green Bmw" };
-        internal string[] themeValues = { "1", "2", "3"  };
+        internal string[] themeEntries = ["Red Bmw", "Blue Audi", "Green Bmw"];
+        internal string[] themeValues = ["1", "2", "3"];
 
         #region Ctors
         public ColorThemeListPreference(Context context) : base(context, null)
